@@ -4,9 +4,140 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="images/logo-white.png" /> -->
 </head>
 <body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <!-- <img src="images/logo.png" alt="logo" with="110px" height="40px"> -->
+                    <h1>A&T</h1>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Account</a></li>
+                    </ul>
+                </nav>
+                <img src="images/cart.png" with="30px" height="30px">
+                <img src="images/account.png" with="50px" height="50px"> <span class="span-account">My account</span>
+                <img src="images/menu.png" class="menu-icon" 
+                  onclick="menutoggle()">
+            </div>
+        </div>
     
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="images/silder/slider1.jpg" alt="">
+                <div class="info">
+                    <h2>Clothing</h2>
+                    <p>The style of clothing creates a person's personality . The style of clothing creates a person's personality</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/silder/slider2.jpg" alt="">
+                <div class="info">
+                    <h2>Clothing</h2>
+                    <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/silder/slider3.jpg" alt="">
+                <div class="info">
+                    <h2>Clothing</h2>
+                    <p>The style of clothing creates a person's personality.The style of clothing creates a person's personality</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/silder/slider4.jpg" alt="">
+                <div class="info">
+                    <h2>Clothing</h2>
+                    <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/silder/slider1.jpg" alt="">
+                <div class="info">
+                    <h2>Clothing</h2>
+                    <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('.slide');
+        var btns = document.querySelectorAll('.btn');
+        let currentSlide = 1;
+    
+        // Javascript for image slider manual navigation
+        var manualNav = function(manual){
+          slides.forEach((slide) => {
+            slide.classList.remove('active');
+    
+            btns.forEach((btn) => {
+              btn.classList.remove('active');
+            });
+          });
+    
+          slides[manual].classList.add('active');
+          btns[manual].classList.add('active');
+        }
+    
+        btns.forEach((btn, i) => {
+          btn.addEventListener("click", () => {
+            manualNav(i);
+            currentSlide = i;
+          });
+        });
+    
+        // Javascript for image slider autoplay navigation
+        var repeat = function(activeClass){
+          let active = document.getElementsByClassName('active');
+          let i = 1;
+    
+          var repeater = () => {
+            setTimeout(function(){
+              //console.log([...active]);
+              [...active].forEach((activeSlide) => {
+                activeSlide.classList.remove('active');
+              });
+    
+            slides[i].classList.add('active');
+            btns[i].classList.add('active');
+            i++;
+    
+            if(slides.length == i){
+              i = 0;
+            }
+            if(i >= slides.length){
+              return;
+            }
+            repeater();
+          }, 10000);
+          }
+          repeater();
+        }
+        repeat();
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
