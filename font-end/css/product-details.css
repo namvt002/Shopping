@@ -115,6 +115,19 @@ p{
     
 }
 
+.logo-account{
+    display:flex;
+    justify-content: center;
+    line-height: 90px;
+}
+  
+.logo-account img{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+
 /* ---- single product details---- */
 .single-product{
     margin-top: 20px;

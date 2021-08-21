@@ -76,7 +76,7 @@ p{
 
 .btn{
     display: inline-block;
-    background: #ff523b;
+    background: #eebdb6;
     color: #fff;
     padding: 8px 30px;
     margin: 30px 0;
@@ -116,6 +116,20 @@ p{
     display: none;
     
 }
+
+
+.logo-account{
+    display:flex;
+    justify-content: center;
+    line-height: 90px;
+}
+  
+.logo-account img{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
 
 /* profile */
 
@@ -217,7 +231,7 @@ p{
     text-align: left;
     padding: 5px;
     color: #fff;
-    background: #ff523b;
+    background: #eebdb6;
     font-weight: normal;
 }
 
@@ -232,7 +246,7 @@ p{
 }
 
 .td-cart a{
-    color: #ff523b;
+    color: #facfc9;
     font-size: 12px;
 }
 
@@ -248,7 +262,7 @@ p{
 }
 
 .total-price table{
-    border-top: 3px solid #ff523b;
+    border-top: 3px solid #f3d5d1;
     width: 100%;
     max-width: 370px;
 }
