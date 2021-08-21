@@ -166,7 +166,7 @@ p{
     min-width: 500px;
 }
 
-th{
+.th-profile{
     float: left;
 }
 
@@ -178,8 +178,89 @@ th{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
-    padding: 80px;
+    padding: 80px; 
 }
+
+.item {
+    display: none;
+
+}
+
+.btn-profile{
+    display: block;
+    cursor: pointer;
+}
+
+.item.active {
+    display: block;
+}
+
+
+/* cart========= */
+
+.cart-page{
+    margin: 80px auto;
+}
+
+.table-cart{
+    width: 100%;
+    border-collapse: collapse; /* loại bỏ đường viền của table chỉ còn đường viền duy nhất*/
+}
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap; /*nam tren cung 1 hang vs anh*/
+
+}
+
+.th-cart{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #ff523b;
+    font-weight: normal;
+}
+
+.td-cart{
+    padding: 10px 7px;
+}
+
+.td-cart #amount{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+.td-cart a{
+    color: #ff523b;
+    font-size: 12px;
+}
+
+.td-cart img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 370px;
+}
+
+.td-cart:last-child{
+    text-align: right;
+}
+
+.th-cart:last-child{
+    text-align: right;
+}
+
 
  /* media query for menu */
 
