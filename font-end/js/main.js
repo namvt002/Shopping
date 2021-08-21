@@ -44,8 +44,10 @@ function changeColor(){
     let primary = this.getAttribute('primary');
     let color = this.getAttribute('color');
     //if(color == prevColor) return;
+   
     colors.forEach(c => c.classList.remove('active'));
     this.classList.add('active');
+
     document.documentElement.style.setProperty('--primary', primary);
 
 }

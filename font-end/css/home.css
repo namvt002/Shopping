@@ -73,21 +73,23 @@ ul{
     list-style-type: none;
 }
 
-.app-logo{
-    margin-top: 20px; 
-}
-
-.app-logo img{
-    width: 140px;
-}
-
 .menu-icon{
     width:28px;
     margin-left: 20px;
-    display: none;
-    
+    display: none;   
 }
 
+.logo-account{
+  display:flex;
+  justify-content: center;
+  line-height: 90px;
+}
+
+.logo-account img{
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
 /* --slider show --- */
 
@@ -251,9 +253,6 @@ ul{
 
   .img-slider .navigation{
     bottom: 10px;
-  }
-  .span-account{
-    display: none;
   }
 }
       
