@@ -276,6 +276,8 @@ input:focus{
     color: #fff;
     transition: .5s;
 }
+
+
  /* media query for menu */
 
 @media only screen and (max-width: 800px){

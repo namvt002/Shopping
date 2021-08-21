@@ -56,3 +56,4 @@ colors.forEach(c => c.addEventListener('click', changeColor));
 
 
 // --sidershows -----
+
