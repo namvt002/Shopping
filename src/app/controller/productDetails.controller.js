@@ -1,6 +1,6 @@
 class ProductDetailsController {
     index(req, res) {
-        res.render('pages/productDetails',);
+        res.render('pages/productDetails',{css: "/css/productDetail.css", title: 'Details'});
     }
 }
 

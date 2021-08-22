@@ -1,154 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products-Details</title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="images/logo-white.png" />
-</head>
-<body>
- 
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <img src="images/logo.png" alt="logo" with="110px" height="40px">
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Account</a></li>
-                </ul>
-            </nav>
-            <img src="images/cart.png" with="30px" height="30px">
-            <img src="images/menu.png" class="menu-icon" 
-                onclick="menutoggle()">
-        </div>
-    </div>
-
-    <!-- ---- single product details ---- -->
+  <!-- single product details -->
 
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img id="ProductImg" src="images/gallery-1.jpg" width="100%">
+                <img id="ProductImg" src="images/detail/AnyConv.com__1.png" width="100%">
 
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img src="images/gallery-1.jpg" width="100%" class="small-img">
+                        <img src="images/detail/AnyConv.com__1.png" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img src="images/gallery-2.jpg" width="100%" class="small-img">
+                        <img src="images/detail/AnyConv.com__2.png" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img src="images/gallery-3.jpg" width="100%" class="small-img">
+                        <img src="images/detail/AnyConv.com__3.png" width="100%" class="small-img">
                     </div>
                     <div class="small-img-col">
-                        <img src="images/gallery-4.jpg" width="100%" class="small-img">
+                        <img src="images/detail/AnyConv.com__4.png" width="100%" class="small-img">
                     </div>
                 </div>
 
 
             </div>
             <div class="col-2">
-                <p>Home / T-Shirt</p>
-                <h1>Red Printd T-Shirt by HRX</h1>
-                <h4>$50.00</h4>
-                <select name="" id="">
-                    <option value=""> Select Size</option>
-                    <option value=""> XXL</option>
-                    <option value=""> XL</option>
-                    <option value=""> Large</option>
-                    <option value=""> Medium</option>
-                    <option value=""> Small</option>
-                </select>
-                <input type="number" name="" id="" value="1">
-                <a href="" class="btn">Add To Cart</a>
-
-                <h3>Products Details  <i class="fa fa-indent"></i></h3>
+                <p>Home / Áo khoát</p>
+                <h1>Áo khoác nam nữ thể thao</h1>
+                <h4>₫49.000</h4>
+                <h3>Chi tiết sản phẩm</h3>
                 <p>
-                    Give your summer wardrobe a style
-                    upgrade with the HRX Men's Active T-shirt. 
-                    Team it with a pair of shorts for your morning
-                    workout or a denims for an evening out with the guys.
+                    Áo khoác nam nữ thể thao ulzzang 3 sọc màu be🌸
+                    Áo sweater hoodie nỉ bông kiểu dáng thể thao form rộng unisex trơn basic
                 </p>
+                <!-- <input type="radio" class="input-radio" name="color" value="">
+                
+                <input type="radio" class="input-radio" name="color" value="">
+                <input type="radio" class="input-radio" name="color" value=""> -->
+                <div class="color-container">
+                    <h3 class="title">Color</h3>
+                    <div class="colors">
+                       
+                        <span class="color active" color="blue" primary="#2175f5"> <input type="radio" name="radio" id="radio-color" checked></span>
+                        <span class="color active" color="red" primary="#f84848"> <input type="radio" name="radio" id="radio-color"></span>
+                        <span class="color active" color="green" primary="#29b864"> <input type="radio" name="radio" id="radio-color"></span>
+                        <span class="color active" color="orange" primary="#ff5521"> <input type="radio" name="radio" id="radio-color"></span>
+                        <span class="color active" color="black" primary="#444"> <input type="radio" name="radio" id="radio-color"></span>
+                    </div>
+                </div>
+
+                <div class="size-container">
+                    <h3 class="title">Size</h3>
+                    <div class="sizes">
+                        <span class="size active">M<input type="radio" name="size" id="size-radio" value="M" checked></span>
+                        <span class="size">L<input type="radio" name="size" id="size-radio" value="L"></span>
+                        <span class="size">S<input type="radio" name="size" id="size-radio" value="S"></span>
+                        <span class="size">X<input type="radio" name="size" id="size-radio" value="X"></span>
+                        <span class="size">XL<input type="radio" name="size" id="size-radio" value="XL"></span>
+                    </div>
+                </div>
+                <h3 class="title">Số lượng</h3>
+                <input type="number" class="input-number" value="1">
+                <input type="submit" value="Add To Cart" class="btn">
+                <input type="submit" value="Buy now"  class="btn">
             </div>
         </div>
     </div>
-
-    <!-----titles----->
-        <div class="small-container">
-            <div class="row row-2">
-                <h2>Related Projects</h2>
-                <p>View more</p>
-            </div>
-        </div>
-
-
-    <!-----product----->
-
-    <div class="small-container">
-        <div class="row">
-            <div class="col-4">
-                <img src="images/product-9.jpg">
-                <h4 >Red Printed Tshirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-10.jpg">
-                <h4 >Red Printed Tshirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-11.jpg">
-                <h4 >Red Printed Tshirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-12.jpg">
-                <h4 >Red Printed Tshirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-        </div>
-   
-    </div>
-
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
-</html>
