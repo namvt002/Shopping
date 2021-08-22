@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products-Details</title>
-    <link rel="stylesheet" href="css/product-details.css">
+    <link rel="stylesheet" href="css/account.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -35,6 +35,63 @@
               onclick="menutoggle()"></a>
         </div>
     </div>
+
+    <!-----account-page----->
+
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="effect">
+                        <img src="images/Effect/1.png" data-speed="-5" class="layer">  
+                        <img src="images/Effect/2.png" data-speed="5" class="layer">  
+                        <img src="images/Effect/3.png" data-speed="2" class="layer">  
+                        <img src="images/Effect/4.png" data-speed="6" class="layer">  
+                        <img src="images/Effect/5.png" data-speed="8" class="layer">  
+                        <img src="images/Effect/6.png" data-speed="-2" class="layer">  
+                        <img src="images/Effect/7.png" data-speed="4" class="layer">  
+                        <img src="images/Effect/8.png" data-speed="-9" class="layer">  
+                        <img src="images/Effect/9.png" data-speed="6" class="layer">  
+                        <img src="images/Effect/10.png" data-speed="-7" class="layer">  
+                        <img src="images/Effect/11.png" data-speed="-5" class="layer">  
+                        <img src="images/Effect/1.png" data-speed="-5" class="layer">  
+                        <h2 class="layer" data-speed="2">Shopping</h2> 
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="convertLogin()">Login</span>
+                            <span onclick="convertRegister()">Register</span>
+                            <hr id="Indicator"> 
+                        </div>
+                        <form id="LoginForm" action="" Method="POST">
+                            <input class="input-form" type="text" name="username" id="" placeholder="Username">
+                            <input class="input-form" type="password" name="password" id="" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="#">Forgot password?</a>
+                        </form>
+                        <form id="RegisterForm"action="" Method="POST">
+                            <input class="input-form" type="text" name="username" id="" placeholder="Username">
+                            <input class="input-form" type="password" name="re-password" id="" placeholder="Re-password">
+                            <input class="input-form" type="password" name="password" id="" placeholder="Password">
+                            <input class="input-form" type="file" name="avatar" id="" style="font-size:12px">
+                            
+                            <label style="font-size: 13px;" for="">Male</label>
+                            <input type="radio" name="gender" class="gender" value="male">
+                            <label style="font-size: 13px;" for="">Female</label>
+                            <input type="radio" name="gender" class="gender" value="female">
+                            <label style="font-size: 13px;" for="">Other</label>
+                            <input type="radio" name="gender" class="gender" value="other">
+                            <button type="submit" class="btn">Register</button> 
+                        </form>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <script type="text/javascript" src="js/main.js"></script>
