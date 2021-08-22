@@ -1,78 +1,74 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-   
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 
 .navbar{
-    display: flex;
-    align-items: center;
-    padding: 20px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
 nav{
-    flex: 1; /* ghim thanh menu */
-    text-align: right;
-    z-index: 3;
+  flex: 1; /* ghim thanh menu */
+  text-align: right;
+  z-index: 3;
 }
 
 nav ul{
-    display: inline-block;
-    list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
 }
 
 nav ul li{
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 a{
-    text-decoration: none;
-    color: #555;
+  text-decoration: none;
+  color: #555;
 }
 
 p{
-    color: #555;
+  color: #555;
 }
 
 .container{
-    max-width: 1300px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; /* cho phep nam tren cung mot hang du cho container thay doi*/
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* cho phep nam tren cung mot hang du cho container thay doi*/
+  justify-content: space-around;
 }
 
-// .header {
-//     /* background: radial-gradient(#fff,#ffd6d6);*/
-//     height: 100vh;
-// }
 
 .col-2 .offer-img{
-    padding: 50px;
+  padding: 50px;
 }
 
 
 ul{
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .menu-icon{
-    width:28px;
-    margin-left: 20px;
-    display: none;   
+  width:28px;
+  margin-left: 20px;
+  display: none;   
 }
 
 .logo-account{
@@ -87,14 +83,42 @@ ul{
   margin-top: 20px;
 }
 
+
+/* swiper */
+
+
+.wrap-swiper {
+  position: relative;
+  min-height: 40vh;
+}
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+    display: block;
+}
+
+
 /* --slider show --- */
 
 .img-slider{
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -169,92 +193,92 @@ ul{
 }
 
 @media (max-width: 800px){
-  .img-slider{
-    width: 720px;
-    height: 375px;
-  }
+.img-slider{
+  width: 720px;
+  height: 375px;
+}
 
-  .img-slider .slide .info{
-    padding: 10px 25px;
-  }
+.img-slider .slide .info{
+  padding: 10px 25px;
+}
 
-  .img-slider .slide .info h2{
-    font-size: 35px;
-  }
+.img-slider .slide .info h2{
+  font-size: 35px;
+}
 
-  .img-slider .slide .info p{
-    width: 70%;
-    font-size: 15px;
-  }
+.img-slider .slide .info p{
+  width: 70%;
+  font-size: 15px;
+}
 
-  .img-slider .navigation{
-    bottom: 25px;
-  }
+.img-slider .navigation{
+  bottom: 25px;
+}
 
-  .img-slider .navigation .btn{
-    width: 10px;
-    height: 10px;
-    margin: 8px;
-  }
+.img-slider .navigation .btn{
+  width: 10px;
+  height: 10px;
+  margin: 8px;
+}
 }
 
 @media (max-width: 620px){
-  .img-slider{
-    width: 500px;
-    height: 250px;
-  }
+.img-slider{
+  width: 500px;
+  height: 250px;
+}
 
-  .img-slider .slide .info{
-    padding: 10px 20px;
-  }
+.img-slider .slide .info{
+  padding: 10px 20px;
+}
 
-  .img-slider .slide .info h2{
-    font-size: 30px;
-  }
+.img-slider .slide .info h2{
+  font-size: 30px;
+}
 
-  .img-slider .slide .info p{
-    width: 80%;
-    font-size: 13px;
-  }
+.img-slider .slide .info p{
+  width: 80%;
+  font-size: 13px;
+}
 
-  .img-slider .navigation{
-    bottom: 15px;
-  }
+.img-slider .navigation{
+  bottom: 15px;
+}
 
-  .img-slider .navigation .btn{
-    width: 8px;
-    height: 8px;
-    margin: 6px;
-  }
+.img-slider .navigation .btn{
+  width: 8px;
+  height: 8px;
+  margin: 6px;
+}
 }
 
 @media (max-width: 420px){
-  .img-slider{
-    width: 370px;
-    height: 200px;
-  }
-
-  .img-slider .slide .info{
-    padding: 5px 10px;
-  }
-
-  .img-slider .slide .info h2{
-    font-size: 25px;
-  }
-
-  .img-slider .slide .info p{
-    width: 90%;
-    font-size: 11px;
-  }
-
-  .img-slider .navigation{
-    bottom: 10px;
-  }
+.img-slider{
+  width: 370px;
+  height: 200px;
 }
 
- /* product */
+.img-slider .slide .info{
+  padding: 5px 10px;
+}
 
- .btn{
+.img-slider .slide .info h2{
+  font-size: 25px;
+}
+
+.img-slider .slide .info p{
+  width: 90%;
+  font-size: 11px;
+}
+
+.img-slider .navigation{
+  bottom: 10px;
+}
+}
+
+/* product */
+
+.btn{
   display: inline-block;
   background: #ffd6d6;
   color: rgb(12, 12, 12);
@@ -270,7 +294,7 @@ ul{
 }
 
 
- .categories{
+.categories{
   margin: 70px 0;
 }
 
@@ -311,7 +335,7 @@ ul{
   transition: transform 0.5s;
 }
 
-     
+   
 /* footer    */
 
 .footer{
@@ -377,37 +401,43 @@ ul{
   text-align: center;
 }
 
+.menu-icon{
+  width:28px;
+  margin-left: 20px;
+  display: none;
+}
 
 
- /* media query for menu */
+
+/* media query for menu */
 
 @media only screen and (max-width: 800px){
-    nav ul{
-        position:absolute;
-        top: 70px;
-        left: 0;
-        background: #333;
-        width: 100%;
-        overflow: hidden;
-        transition:max-height 0.5s;
-    }
-    nav ul li{
-        display: block;
-        margin-right: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    nav ul li a{
-        color: #fff;
-    }
-    .menu-icon{
-        display: block;
-        cursor: pointer;
-    }
+  nav ul{
+      position:absolute;
+      top: 70px;
+      left: 0;
+      background: #333;
+      width: 100%;
+      overflow: hidden;
+      transition:max-height 0.5s;
+  }
+  nav ul li{
+      display: block;
+      margin-right: 50px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  nav ul li a{
+      color: #fff;
+  }
+  .menu-icon{
+      display: block;
+      cursor: pointer;
+  }
 }
 
 @media only screen and (max-width: 600px){
-    .row{
-        text-align: center;
-    }
+  .row{
+      text-align: center;
+  }
 }

@@ -184,6 +184,65 @@
       </div>
     </div>
 
+
+     <div class="small-container wrap-swiper">
+        <!-- Swiper -->
+        <h1 style="text-align: center;">Future product</h1>
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+       var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 20,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true,
+        },
+      
+      });
+  </script>
+
     <script type="text/javascript">
         var slides = document.querySelectorAll('.slide');
         var btns = document.querySelectorAll('.btn');

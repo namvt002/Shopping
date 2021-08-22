@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping</title>
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -35,7 +36,7 @@
                   onclick="menutoggle()"></a>
             </div>
         </div>
-    
+
         <div class="img-slider">
             <div class="slide active">
                 <img src="images/silder/slider1.jpg" alt="">
@@ -82,6 +83,10 @@
         </div>
 
     </div>
+
+
+
+    
 
 
   <!---- featured categories ------>
@@ -223,7 +228,42 @@
       </div>
     </div>
 
-
+    <div class="small-container wrap-swiper">
+        <!-- Swiper -->
+        <h1 style="text-align: center;">Future product</h1>
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/detail/AnyConv.com__2.png" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 
     <div class="footer">
       <div class="container">
@@ -266,6 +306,27 @@
           <p class="Copyright">Copyright &copy; 2021</p>
       </div>
   </div>
+
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+       var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 20,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true,
+        },
+      
+      });
+  </script>
     <script type="text/javascript">
         var slides = document.querySelectorAll('.slide');
         var btns = document.querySelectorAll('.btn');

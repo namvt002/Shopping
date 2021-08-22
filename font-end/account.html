@@ -92,6 +92,34 @@
         </div>
     </div>
 
+    <script>
+          var LoginForm = document.getElementById("LoginForm");
+        var RegisterForm = document.getElementById("RegisterForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function convertRegister(){
+            RegisterForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+
+        function convertLogin(){
+            RegisterForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+
+        document.addEventListener("mousemove", Shopping);
+        
+        function Shopping(e){
+            this.querySelectorAll(".layer").forEach(layer =>{
+                const speed = layer.getAttribute("data-speed");
+                const x = (window.innerWidth - e.pageX*speed)/100;
+                const y = (window.innerHeight - e.pageY*speed)/100;
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            })
+        }
+    </script>
 
 
     <script type="text/javascript" src="js/main.js"></script>

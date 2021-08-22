@@ -67,6 +67,26 @@ ul {
   justify-content: center;
   margin-top: 20px; }
 
+/* swiper */
+.wrap-swiper {
+  position: relative;
+  min-height: 40vh; }
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 50px; }
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px; }
+
+.swiper-slide img {
+  display: block; }
+
 /* --slider show --- */
 .img-slider {
   position: relative;
@@ -284,6 +304,11 @@ ul {
 
 .Copyright {
   text-align: center; }
+
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  display: none; }
 
 /* media query for menu */
 @media only screen and (max-width: 800px) {
