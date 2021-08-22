@@ -219,6 +219,7 @@ p {
 
 /* footer    */
 .footer {
+  margin-top: 50px;
   background: #000;
   color: #8a8a8a;
   font-size: 14px;
