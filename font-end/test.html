@@ -9,7 +9,10 @@
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
     <!-- Demo styles -->
     <style>
@@ -28,82 +31,83 @@
         padding: 0;
       }
 
-      .swiper-container {
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
+      .swiper {
+        top: 50px;
+        width: 50%;
+        height: 50%;
       }
 
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
-      }
+
 
       .swiper-slide img {
         display: block;
         width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
       }
     </style>
   </head>
 
   <body>
     <!-- Swiper -->
-    <div class="swiper-container mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+   
+        <div class="swiper mySwiper1">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+              <div class="swiper-slide"><img src="images/silder/slider1.jpg" alt=""></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </div>
-        <div class="swiper-slide">
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
 
+   
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
+      var swiper1 = new Swiper(".mySwiper1", {
+        spaceBetween: 30,
         centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
         },
         pagination: {
           el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
+
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true, // con trỏ chuột để kéo
+        centeredSlides: true,
+        slidesPerView: "auto", // tự động trượt qua lại được
+        coverflowEffect: {
+          rotate: 20, //độ xoay
+          stretch: 0, // độ lộn 
+          depth: 200, // độ sâu khi lộn
+          modifier: 1, // lật 1 lần bao nhiêu tấm
+          slideShadows: true, //bóng trượt
+        },
+      
+      });
+
+
     </script>
   </body>
 </html>

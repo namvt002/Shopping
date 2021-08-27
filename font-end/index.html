@@ -37,7 +37,26 @@
             </div>
         </div>
 
-        <div class="img-slider">
+            <div class="swiper mySwiper1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="images/silder/slider2.jpg" alt=""></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+              </div>
+
+
+
+        <!-- <div class="img-slider">
             <div class="slide active">
                 <img src="images/silder/slider1.jpg" alt="">
                 <div class="info">
@@ -80,12 +99,12 @@
                 <div class="btn"></div>
                 <div class="btn"></div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
 
-
+  
     
 
 
@@ -310,78 +329,44 @@
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+  <script>
+        var swiper1 = new Swiper(".mySwiper1", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    </script>
   <!-- Initialize Swiper -->
   <script>
        var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
-        grabCursor: true,
+        grabCursor: true, // con trỏ chuột để kéo
         centeredSlides: true,
-        slidesPerView: "auto",
+        slidesPerView: "auto", // tự động trượt qua lại được
         coverflowEffect: {
-          rotate: 20,
-          stretch: 0,
-          depth: 200,
-          modifier: 1,
-          slideShadows: true,
+          rotate: 20, //độ xoay
+          stretch: 0, // độ lộn 
+          depth: 200, // độ sâu khi lộn
+          modifier: 1, // lật 1 lần bao nhiêu tấm
+          slideShadows: true, //bóng trượt
         },
       
       });
   </script>
-    <script type="text/javascript">
-        var slides = document.querySelectorAll('.slide');
-        var btns = document.querySelectorAll('.btn');
-        let currentSlide = 1;
-    
-        // Javascript for image slider manual navigation
-        var manualNav = function(manual){
-          slides.forEach((slide) => {
-            slide.classList.remove('active');
-    
-            btns.forEach((btn) => {
-              btn.classList.remove('active');
-            });
-          });
-    
-          slides[manual].classList.add('active');
-          btns[manual].classList.add('active');
-        }
-    
-        btns.forEach((btn, i) => {
-          btn.addEventListener("click", () => {
-            manualNav(i);
-            currentSlide = i;
-          });
-        });
-    
-        // Javascript for image slider autoplay navigation
-        var repeat = function(activeClass){
-          let active = document.getElementsByClassName('active');
-          let i = 1;
-    
-          var repeater = () => {
-            setTimeout(function(){
-              //console.log([...active]);
-              [...active].forEach((activeSlide) => {
-                activeSlide.classList.remove('active');
-              });
-    
-            slides[i].classList.add('active');
-            btns[i].classList.add('active');
-            i++;
-    
-            if(slides.length == i){
-              i = 0;
-            }
-            if(i >= slides.length){
-              return;
-            }
-            repeater();
-          }, 3000);
-          }
-          repeater();
-        }
-        repeat();
-    </script>
+
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

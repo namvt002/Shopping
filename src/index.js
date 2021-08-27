@@ -4,7 +4,10 @@ const app = express();
 const handlebars = require('express-handlebars');
 const { extname } = require('path');
 const route = require('./routes');
+const db = require('./config/db');
 const session = require('express-session');
+
+db.connect();
 
 app.use(express.static(path.join(__dirname,'public')));
 app.engine('hbs', handlebars(

@@ -162,7 +162,6 @@
 
     <script>
         const btns = document.querySelectorAll(".btn-profile");
-
         btns.forEach((btn) => {
             btn.addEventListener("click", () => {
                 btns.forEach((btn) => btn.classList.remove("active"));
@@ -171,6 +170,8 @@
 
                 items.forEach((item) => item.classList.remove("active"));
                 btn.classList.add("active");
+                console.log(document.querySelector(btn.dataset.target));
+                console.log(btn.dataset.target);
                 document.querySelector(btn.dataset.target).classList.add("active");
             });
         });

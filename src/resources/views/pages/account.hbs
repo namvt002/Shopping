@@ -27,13 +27,13 @@
                             <span onclick="convertRegister()">Register</span>
                             <hr id="Indicator"> 
                         </div>
-                        <form id="LoginForm" action="" Method="POST">
+                        <form id="LoginForm" action=""  enctype="multipart/form-data"  Method="POST">
                             <input class="input-form" type="text" name="username" id="" placeholder="Username">
                             <input class="input-form" type="password" name="password" id="" placeholder="Password">
-                            <button type="submit" class="btn">Login</button>
+                            <input type="submit" class="btn" value="Login">
                             <a href="#">Forgot password?</a>
                         </form>
-                        <form id="RegisterForm"action="" Method="POST">
+                        <form id="RegisterForm" action="account/addUser" enctype="multipart/form-data" method="post">
                             <input class="input-form" type="text" name="username" id="" placeholder="Username">
                             <input class="input-form" type="password" name="re-password" id="" placeholder="Re-password">
                             <input class="input-form" type="password" name="password" id="" placeholder="Password">
@@ -45,7 +45,7 @@
                             <input type="radio" name="gender" class="gender" value="female">
                             <label style="font-size: 13px;" for="">Other</label>
                             <input type="radio" name="gender" class="gender" value="other">
-                            <button type="submit" class="btn">Register</button>
+                            <input type="submit" class="btn" value="Register">
                             
                         </form>
                     </div>
