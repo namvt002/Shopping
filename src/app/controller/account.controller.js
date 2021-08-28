@@ -1,5 +1,5 @@
 const registermodel = require('../models/register.model');
-
+const loginmodel = require('../models/login.model');
 
 class AccountController {
     index(req, res) {
@@ -7,7 +7,11 @@ class AccountController {
     }
     addUser(req, res){
          registermodel.addUser(req, res);
-     }
+    }
+    checkUser(req, res){
+        // res.send("ok la");
+        loginmodel.checkUser(req, res);
+    }
 }
 
 module.exports = new AccountController();

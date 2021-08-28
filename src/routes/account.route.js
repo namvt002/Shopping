@@ -3,7 +3,7 @@ const route = express.Router();
 const accountcontroller = require('../app/controller/account.controller');
 const upload = require('../util/upload.file');
 
-
+route.post('/checkUser', accountcontroller.checkUser);
 route.post('/addUser', upload.index().single('avatar'), accountcontroller.addUser);
 route.use('/', accountcontroller.index);
 
