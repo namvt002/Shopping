@@ -1,4 +1,8 @@
- <div class="container">
+ 
+ {{> profile/profile profile }}
+ 
+ 
+ {{!-- <div class="container">
         <div class="row">
             <div class="col-3">
                 <div class="wrap">
@@ -6,7 +10,7 @@
                         <div class="profile-img">
                 
                         </div>
-                        <h1 class="name-profile">TVTrung</h1>
+                        <h1 class="name-profile">{{username}}</h1>
                         <div class="description">
                             <!-- <a href=""  class="btn-profile active" data-target="#profile"><p>Profile</p></a>
                             <a href="" class="btn-profile" data-target="#cart"><p>Cart</p></a>
@@ -34,7 +38,7 @@
                                 <tr>
                                     <th class="th-profile">Username</th>
                                     
-                                    <td>Trung xinh dep</td>
+                                    <td>{{username}}</td>
                                 </tr>
                                 <tr>
                                     <th class="th-profile">Email</th>
@@ -135,5 +139,5 @@
                 document.querySelector(btn.dataset.target).classList.add("active");
             });
         });
-    </script>
+    </script> --}}
    

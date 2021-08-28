@@ -3,12 +3,12 @@ const userschema = require('../../config/schema/user.shema');
 
 
 class LoginModel {
-    checkUser(req, res) {
-        userschema.findOne({username: req.body.username})
+    checkUser(req, res, next) {
+        return userschema.findOne({username: req.body.username})
             .then(user => {
                 if(user.password == req.body.password) {
-                    // req.session.username  = req.body.username;
-                    res.redirect('/profile');
+                    req.session.username  = req.body.username;
+                    return 1;
                 }else{
                     res.send('sai cmm mat khau roi');
                     res.redirect('/account');
@@ -16,7 +16,7 @@ class LoginModel {
             })
             .catch(err => { console.log(err)});
     }
-    
 };
+
 
 module.exports = new LoginModel;

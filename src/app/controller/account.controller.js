@@ -1,5 +1,6 @@
 const registermodel = require('../models/register.model');
 const loginmodel = require('../models/login.model');
+const { renderSync } = require('node-sass');
 
 class AccountController {
     index(req, res) {
@@ -8,10 +9,12 @@ class AccountController {
     addUser(req, res){
          registermodel.addUser(req, res);
     }
-    checkUser(req, res){
-        // res.send("ok la");
-        loginmodel.checkUser(req, res);
+    async checkUser(req, res, next){
+        let isTrue = await  loginmodel.checkUser(req, res, next);
+        res.redirect("/profile");
     }
 }
+
+
 
 module.exports = new AccountController();
