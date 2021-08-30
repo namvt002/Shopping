@@ -9,7 +9,8 @@ class ProfileController {
         let user = await profilemodel.getProfile(req, res);
         res.render('pages/profile',
             {
-                profile: [ {username: "trung", password: 1}, {username: "trung2", password: 2}]
+                css: "/css/profile.css", title: 'Profile',
+                profile: user // [ {username: "trung", password: 1}, {username: "trung2", password: 2}]
             }
         );
     };

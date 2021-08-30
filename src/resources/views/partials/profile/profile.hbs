@@ -1,7 +1,155 @@
-{{#each this}}
-    <p>{{this.username}}</p>
 
-    <p>{{this.password}}</p>
+ {{>header}}
+ 
+<div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="wrap">
+                    <div class="login-container"> 
+                    {{#each this}}
+                                <img class="profile-img" src="{{this.avatar}}" alt=""> 
+                    {{/each}} 
+                      
+                    <h1 class="name-profile">Profile</h1>
+                        <div class="description">
+                            <!-- <a href=""  class="btn-profile active" data-target="#profile"><p>Profile</p></a>
+                            <a href="" class="btn-profile" data-target="#cart"><p>Cart</p></a>
+                            <a href="" class="btn-profile" data-target="#histoory"> <p>History Shopping</p></a>
+                            <a href="" class="btn-profile" data-target="#purchases"><p>Purchases Order</p></a>
+                            <a href=""> <p>Back to main</p></a> -->
+                            <a class="btn-profile active" data-target="#profile">Profile</a>
+                            <a class="btn-profile " data-target="#cart">Cart</a>
+                            <a class="btn-profile" data-target="#js">History Shopping</a>
+                            <a class="btn-profile" data-target="#js">Purchases Order</a>
+                            <a href=""> Back to main</a>
+                            <br>
+                            <a href=""> Log out</a>
 
-    <p>{{this.gender}}</p>
-{{/each}}
+                        
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-13">
+                <div class="profile-detail">
+                    <div class="item active" id="profile">
+                        <form action="" method="post">
+                            <table style=" border-spacing: 20px;">
+                                <h1>Profile</h1>
+                                <tr>
+                                    <th class="th-profile">Username</th>
+                                    
+                                    <td>
+                                    {{#each this}}
+                                        <p>{{this.username}}</p>
+                                    {{/each}} 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="th-profile">Gender</th>
+                                        
+                                    <td>
+                                        {{#each this}}
+                                            <p>{{this.gender}}</p>
+                                        {{/each}} 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="th-profile">Full Name</th>
+                                    
+                                    <td>Trần Việt Trung</td>
+                                </tr>
+                                <tr>
+                                    <th class="th-profile">Age</th>
+                                    
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <th class="th-profile">Full Name</th>
+                                    
+                                    <td>Trần Việt Trung</td>
+                                </tr>
+                                <td></td>
+                                <td colspan = 2 style=" text-align: center">
+                                    <input class="btn profile" type = "submit" name = "Update-profile" value ="Update profile" />
+                                    <input class="btn profile" type = "reset" name = "Change-password" value ="Change password" />
+                                </td>
+                            </table>
+                       </form>
+                    </div>
+
+                    <div class="item" id="cart">
+                        <form action="" method="post">
+                            <div class="small-container cart-page">
+                                <table class="table-cart">
+                                    <tr>
+                                        <th class="th-cart">Products</th>
+                                        <th class="th-cart">Quantity</th>
+                                        <th class="th-cart">Subtotal</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-cart">
+                                            <div class="cart-info">
+                                                <img src="images/detail/AnyConv.com__1.png" alt="">
+                                                <div>
+                                                    <p>Red Printed T-Shirt</p>
+                                                    <small>Price: $50.00</small>
+                                                    <a href="">Remove</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><input type="number" name="" id="amount" value="1"></td>
+                                        <td>$50.00</td>
+                                    </tr>
+                                </table>
+                        
+                                <div class="total-price">
+                                    <table>
+                                        <tr>
+                                            <td>Subtotal</td>
+                                            <td>$200.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Subtotal</td>
+                                            <td>$35.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td>$230.00</td>
+                                        </tr>
+                                        <td colspan = 2 style=" text-align: center">
+                                            <input class="btn" type = "submit" name = "" value ="pay" />
+                                            <input class="btn" type = "reset" name = "" value ="Bye now" />
+                                        </td>
+                                    </table>
+                                </div>
+                        
+                            </div>
+                           
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            {{!-- <p class="description">
+                {{> profile/profile profile}}
+            </p>  lookup --}}
+        </div>
+    </div>
+   
+   {{> footer}}
+
+    <script>
+        const btns = document.querySelectorAll(".btn-profile");
+        btns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                btns.forEach((btn) => btn.classList.remove("active"));
+                const items = document.querySelectorAll(".item");
+                items.forEach((item) => item.classList.remove("active"));
+                btn.classList.add("active");
+                console.log(document.querySelector(btn.dataset.target));
+                document.querySelector(btn.dataset.target).classList.add("active");
+            });
+        });
+    </script>

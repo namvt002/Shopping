@@ -14,6 +14,7 @@ app.engine('hbs', handlebars(
    { extname: '.hbs' }
 ));
 
+// su dung post
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

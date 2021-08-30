@@ -120,7 +120,6 @@ p {
 .login-container .profile-img {
   height: 100px;
   width: 100px;
-  background: url(../images/trung.png);
   background-size: cover;
   background-position: center;
   position: absolute;
