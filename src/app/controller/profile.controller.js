@@ -10,7 +10,8 @@ class ProfileController {
         res.render('pages/profile',
             {
                 css: "/css/profile.css", title: 'Profile',
-                profile: user // [ {username: "trung", password: 1}, {username: "trung2", password: 2}]
+                username: req.session.username,
+                profile: user
             }
         );
     };

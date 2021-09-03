@@ -11,12 +11,14 @@ class CheckSession {
 
     unSession(req, res, next) {
         if(req.session.username){
-            req.session.destroy();
-            res.redirect('/account');
+            req.session.destroy(() => {
+                res.redirect('/')
+            })
+               
         }else{
             next();
         }
-     }
+    }
 }
 
 module.exports = new CheckSession;

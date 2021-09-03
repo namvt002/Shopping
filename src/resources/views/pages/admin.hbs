@@ -1,0 +1,27 @@
+    <div>
+        <h1>ADD PRODUCT</h1>
+    </div>
+    <form action="admin/addProduct" enctype="multipart/form-data" method="post">
+        <table  align= "center">
+            <tr>
+                <td>title product</td> 
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr>
+                <td>Price</td> 
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <td>Images product</td> 
+                <td><input type ="file" name = "productImage"></td>
+            </tr>
+            
+            
+            <tr>
+                <td colspan =2 style=" text-align: center">
+                    <input type ="submit" nam = "Add" value ="Add">
+                    <input type ="submit" name = "cancel" value ="Cancel" > 
+                </td>
+            </tr>
+        </table>
+    </form>

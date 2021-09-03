@@ -6,6 +6,7 @@ const { extname } = require('path');
 const route = require('./routes');
 const db = require('./config/db');
 const session = require('express-session');
+var bodyParser = require("body-parser");
 
 db.connect();
 
@@ -18,6 +19,11 @@ app.engine('hbs', handlebars(
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname,'resources\\views'));
 
@@ -28,6 +34,7 @@ app.use(session({
    saveUninitialized: true,
    cookie: {},
 }))
+
 
 route.index(app);
 

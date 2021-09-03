@@ -10,7 +10,6 @@ class LoginModel {
                     req.session.username  = req.body.username;
                     return 1;
                 }else{
-                    res.send('sai cmm mat khau roi');
                     res.redirect('/account');
                 }
             })

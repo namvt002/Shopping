@@ -1,5 +1,6 @@
 const registermodel = require('../models/register.model');
 const loginmodel = require('../models/login.model');
+
 const { renderSync } = require('node-sass');
 
 class AccountController {

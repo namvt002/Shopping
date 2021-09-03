@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100%; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px; }
+
+nav {
+  flex: 1;
+  /* ghim thanh menu */
+  text-align: right;
+  z-index: 3; }
+
+nav ul {
+  display: inline-block;
+  list-style-type: none; }
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px; }
+
+a {
+  text-decoration: none;
+  color: #555; }
+
+p {
+  color: #555; }
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  /* cho phep nam tren cung mot hang du cho container thay doi*/
+  justify-content: space-around; }
+
+.col-2 .offer-img {
+  padding: 50px; }
+
+ul {
+  list-style-type: none; }
+
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  display: none; }
+
+.logo-account {
+  display: flex;
+  justify-content: center;
+  line-height: 90px; }
+
+.logo-account img {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; }
+
+/* --slider show --- */
+.img-slider {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center; }
+
+.img-slider .slide {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0% at 0 50%); }
+
+.img-slider .slide.active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s;
+  width: 100%;
+  height: 100%;
+  transition-property: clip-path; }
+
+.img-slider .slide img {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  padding: 0 10px; }
+
+.img-slider .slide .info {
+  position: absolute;
+  top: 0;
+  padding: 15px 30px; }
+
+.img-slider .slide .info h2 {
+  color: #fff;
+  font-size: 45px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px; }
+
+.img-slider .slide .info p {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  width: 60%;
+  padding: 10px;
+  border-radius: 4px; }
+
+.img-slider .navigation {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.img-slider .navigation .btn {
+  background: rgba(255, 255, 255, 0.5);
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer; }
+
+.img-slider .navigation .btn.active {
+  background: #312f31;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+
+/* swiper */
+.wrap-swiper {
+  position: relative;
+  min-height: 40vh; }
+
+.swiper-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 50px; }
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 250px; }
+
+.swiper-slide img {
+  display: block;
+  width: 100%; }
+
+@media (max-width: 800px) {
+  .img-slider {
+    width: 720px;
+    height: 375px; }
+  .img-slider .slide .info {
+    padding: 10px 25px; }
+  .img-slider .slide .info h2 {
+    font-size: 35px; }
+  .img-slider .slide .info p {
+    width: 70%;
+    font-size: 15px; }
+  .img-slider .navigation {
+    bottom: 25px; }
+  .img-slider .navigation .btn {
+    width: 10px;
+    height: 10px;
+    margin: 8px; } }
+
+@media (max-width: 620px) {
+  .img-slider {
+    width: 500px;
+    height: 250px; }
+  .img-slider .slide .info {
+    padding: 10px 20px; }
+  .img-slider .slide .info h2 {
+    font-size: 30px; }
+  .img-slider .slide .info p {
+    width: 80%;
+    font-size: 13px; }
+  .img-slider .navigation {
+    bottom: 15px; }
+  .img-slider .navigation .btn {
+    width: 8px;
+    height: 8px;
+    margin: 6px; } }
+
+@media (max-width: 420px) {
+  .img-slider {
+    width: 370px;
+    height: 200px; }
+  .img-slider .slide .info {
+    padding: 5px 10px; }
+  .img-slider .slide .info h2 {
+    font-size: 25px; }
+  .img-slider .slide .info p {
+    width: 90%;
+    font-size: 11px; }
+  .img-slider .navigation {
+    bottom: 10px; } }
+
+/* product */
+.btn {
+  display: inline-block;
+  background: #ffd6d6;
+  color: #0c0c0c;
+  padding: 8px 10px;
+  margin: 10px 5px;
+  border-radius: 20px;
+  transition: background 0.5s; }
+
+.btn:hover {
+  background: #c98787;
+  color: #fff; }
+
+.categories {
+  margin: 70px 0; }
+
+.col-3 {
+  flex-basis: 30%;
+  min-width: 250px;
+  margin-bottom: 30px; }
+
+.col-3 img {
+  width: 100%; }
+
+.small-container {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.col-4 {
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px; }
+
+.col-4 img {
+  width: 100%; }
+
+.title {
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+  transition: transform 0.5s; }
+
+/* footer    */
+.footer {
+  background: #000;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px; }
+
+.footer p {
+  color: #8a8a8a; }
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px; }
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+  min-width: 250px;
+  margin-bottom: 20px; }
+
+.footer-col-1 {
+  flex-basis: 30%; }
+
+.footer-col-2 {
+  flex: 1;
+  text-align: center; }
+
+.footer-col-2 img {
+  width: 180px;
+  margin-bottom: 20px; }
+
+.footer-col-3, .footer-col-4 {
+  flex-basis: 12%;
+  text-align: center; }
+
+ul {
+  list-style-type: none; }
+
+.app-logo {
+  margin-top: 20px; }
+
+.app-logo img {
+  width: 140px; }
+
+.footer hr {
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0; }
+
+.Copyright {
+  text-align: center; }
+
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  display: none; }
+
+/* media query for menu */
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s; }
+  nav ul li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  nav ul li a {
+    color: #fff; }
+  .menu-icon {
+    display: block;
+    cursor: pointer; } }
+
+@media only screen and (max-width: 600px) {
+  .row {
+    text-align: center; } }
