@@ -10,7 +10,7 @@ const listProductroute = require('./listProducts.route')
 
 class Route{
     index(app){
-        app.use('/listProducts', listProductroute);
+        app.use('admin/listProducts', listProductroute);
         app.use('/admin', adminroute);
         app.use('/logout', checkSession.unSession,  );
         // app.get('/logout', logoutController);

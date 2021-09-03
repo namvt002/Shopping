@@ -84,118 +84,70 @@
   }
   
   
-  
-  /* --slider show --- */
-  
-  .img-slider{
-    position: relative;
+
+  .cart-page{
+    margin: 80px auto;
+}
+
+.table-cart{
     width: 100%;
-    height: 80vh;
+    border-collapse: collapse; /* loại bỏ đường viền của table chỉ còn đường viền duy nhất*/
+}
+
+.cart-info{
     display: flex;
-    justify-content: center;
-  }
-  
-  
-  .img-slider .slide{
-    z-index: 1;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: circle(0% at 0 50%);
-  }
-  
-  .img-slider .slide.active{
-    clip-path: circle(150% at 0 50%);
-    transition: 2s;
-    width: 100%;
-    height: 100%;
-    transition-property: clip-path;
-  }
-  
-  .img-slider .slide img{
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    padding: 0 10px;
-  }
-  
-  .img-slider .slide .info{
-    position: absolute;
-    top: 0;
-    padding: 15px 30px;
-  }
-  
-  .img-slider .slide .info h2{
+    flex-wrap: wrap; /*nam tren cung 1 hang vs anh*/
+
+}
+
+.th-cart{
+    text-align: left;
+    padding: 5px;
     color: #fff;
-    font-size: 45px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 2px;
-  }
-  
-  .img-slider .slide .info p{
-    color: #fff;
-    background: rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    width: 60%;
-    padding: 10px;
-    border-radius: 4px;
-  }
-  
-  .img-slider .navigation{
-    z-index: 2;
-    position: absolute;
+    background: #eebdb6;
+    font-weight: normal;
+}
+
+.td-cart{
+    padding: 10px 7px;
+}
+
+.td-cart #amount{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+.td-cart a{
+    color: #facfc9;
+    font-size: 12px;
+}
+
+.td-cart img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.total-price{
     display: flex;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .img-slider .navigation .btn{
-    background: rgba(255, 255, 255, 0.5);
-    width: 12px;
-    height: 12px;
-    margin: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .img-slider .navigation .btn.active{
-    background: #312f31;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-  }
-  
-  
-  
-  /* swiper */
-  
-  
-  .wrap-swiper {
-    position: relative;
-    min-height: 40vh;
-  }
-  
-  .swiper-container {
-    // width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin: 50px;
-  }
-  
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 250px;
-    height: 250px;
-  }
-  
-  .swiper-slide img {
-      display: block;
-      // width: 300px;
-      // height: 300px;
-      width: 100%;
-  }
+    justify-content: flex-end;
+}
+
+.total-price table{
+    border-top: 3px solid #f3d5d1;
+    width: 100%;
+    max-width: 370px;
+}
+
+.td-cart:last-child{
+    text-align: right;
+}
+
+.th-cart:last-child{
+    text-align: right;
+}
+
   
   
   @media (max-width: 800px){

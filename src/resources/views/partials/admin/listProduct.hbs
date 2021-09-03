@@ -7,20 +7,42 @@
    {{#each this}}
         <img  src="{{this.productImage}}" alt=""> 
     {{/each}}  --}}
- 
-    <h2 class="title">Products</h2>
-    <h4>trung ne    </h4>
-   
-         <div class="small-container">
-                <div class="row">
-                    {{#each listproduct}}
-                        <div class="col-4">
-                            <img  src="{{this.productImage}}" alt=""> 
-                            <h4> {{this.title}} </h4>
-                            <p>{{this.price}}</p>
-                            <a href="#" class="btn">Add to cart</a>
-                            <a href="#" class="btn">Buy now</a>
-                        </div>
-                    {{/each}}
-                </div>
-        </div>
+    <a href="admin" class="btn">Add </a>
+    {{#each this}}
+        <form action="" method="post">
+            <div class="small-container cart-page">
+                <table class="table-cart">
+                    <tr>
+                        <th class="th-cart">Products</th>
+                        <th class="th-cart">Quantity</th>
+                        <th class="th-cart">Subtotal</th>
+                    </tr>
+                    <tr>
+                        <td class="td-cart">
+                            <div class="cart-info">
+                                  
+                                        <img  src="{{this.productImage}}" alt=""> 
+                                   
+                                <div>
+                                    <p>
+                                      
+                                            <p>{{this.title}}</p>
+                                     
+                                    </p>
+                                    <small>
+                                      
+                                            <p>{{this.price}}</p>
+                                      
+                                        
+                                    </small>
+                                    <a href="listProducts/{{this._id}}">Remove</a>
+                                     <a href="listProducts/edit/{{this._id}}">Edit</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td> <p>{{this.price}}</p></td>
+                    </tr>
+                </table>       
+            </div>                
+        </form>
+    {{/each}}
