@@ -5,7 +5,7 @@ const AddProductSchema = require('../../config/schema/product.schema');
 
 class AdminController {
     index(req, res) {
-        res.render('pages/admin', {css: "/css/admin.css", title: 'admin'});
+        res.render('pages/admin', {css: "/css/admin.css", title: 'admin',viewproduct: "Add Product", });
     }
 
     addProduct(req, res) {
@@ -36,6 +36,8 @@ class AdminController {
         AddProductSchema.findById(req.params.id,(err, editProduct) => {
             if(!err){
                 res.render('pages/admin',{
+                    viewproduct: "Edit Product",
+                    css: "/css/admin.css", title: 'admin',
                     edit: editProduct.toJSON(),
                 });
             }
