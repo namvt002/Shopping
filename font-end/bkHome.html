@@ -1,0 +1,127 @@
+{{> header }}
+<div class="img-slider">
+    <div class="slide active">
+        <img src="images/silder/slider1.jpg" alt="">
+        <div class="info">
+            <h2>Clothing</h2>
+            <p>The style of clothing creates a person's personality . The style of clothing creates a person's personality</p>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="images/silder/slider2.jpg" alt="">
+        <div class="info">
+            <h2>Clothing</h2>
+            <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="images/silder/slider3.jpg" alt="">
+        <div class="info">
+            <h2>Clothing</h2>
+            <p>The style of clothing creates a person's personality.The style of clothing creates a person's personality</p>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="images/silder/slider4.jpg" alt="">
+        <div class="info">
+            <h2>Clothing</h2>
+            <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
+        </div>
+    </div>
+    <div class="slide">
+        <img src="images/silder/slider1.jpg" alt="">
+        <div class="info">
+            <h2>Clothing</h2>
+            <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
+        </div>
+    </div>
+    <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+    </div>
+</div>
+
+{{!-- {{> admin/listProduct listproduct}} --}}
+
+{{!-- <!---- featured categories ------>
+<div class="small-container">
+<h2 class="title">Products</h2>
+<div class="row">
+    <div class="col-4">
+        <img src="images/detail/AnyConv.com__2.png">
+        <h4 > Sweater hoodie</h4>
+        <div class="rating">
+
+            
+        </div>
+        <p>$50.00</p>
+        <a href="#" class="btn">Add to cart</a>
+        <a href="#" class="btn">Buy now</a>
+    </div>
+
+</div>
+</div> --}}
+
+
+{{> footer}}
+
+
+
+<script type="text/javascript">
+var slides = document.querySelectorAll('.slide');
+var btns = document.querySelectorAll('.btn');
+let currentSlide = 1;
+
+// Javascript for image slider manual navigation
+var manualNav = function(manual){
+  slides.forEach((slide) => {
+    slide.classList.remove('active');
+
+    btns.forEach((btn) => {
+      btn.classList.remove('active');
+    });
+  });
+
+  slides[manual].classList.add('active');
+  btns[manual].classList.add('active');
+}
+
+btns.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    manualNav(i);
+    currentSlide = i;
+  });
+});
+
+// Javascript for image slider autoplay navigation
+var repeat = function(activeClass){
+  let active = document.getElementsByClassName('active');
+  let i = 1;
+
+  var repeater = () => {
+    setTimeout(function(){
+      //console.log([...active]);
+      [...active].forEach((activeSlide) => {
+        activeSlide.classList.remove('active');
+      });
+
+    slides[i].classList.add('active');
+    btns[i].classList.add('active');
+    i++;
+
+    if(slides.length == i){
+      i = 0;
+    }
+    if(i >= slides.length){
+      return;
+    }
+    repeater();
+  }, 3000);
+  }
+  repeater();
+}
+repeat();
+</script>

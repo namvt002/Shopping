@@ -9,6 +9,65 @@ function menutoggle() {
     }
 }
 
+// SliderShow
+
+// create an array of image sources;
+let images = [
+    'image1.jpg', 'image2.jpg', 'image3.jpg','image4.jpg'
+]
+let i = 0;
+
+//add initial image to canvas
+let canvas = document.getElementById('canvas');
+canvas.style.background = `url(./images/slider/${images[0]})`
+
+//add eventListeners to arrows
+let arrows = document.querySelectorAll('.arrow');
+
+arrows.forEach(function(arrow){
+    arrow.addEventListener('click', function(e){
+        if (e.target.id === "left"){
+            //check to see if at beginning of array
+            i--;
+            if (i < 0){
+                i = images.length -1;
+            }
+            canvas.style.background = `url(./images/slider/${images[i]})`;
+        } else if (e.target.id === "right") {
+            i++;
+            if (i >= images.length ){
+                i = 0;
+            }
+            canvas.style.background = `url(./images/slider/${images[i]})`;
+        }
+    })
+});
+    
+
+// about 
+
+const about = document.querySelector(".about");
+const btns = document.querySelectorAll(".tab-btn");
+const articles = document.querySelectorAll(".content");
+about.addEventListener("click", function (e) {
+  const id = e.target.dataset.id;
+  if (id) {
+    // remove selected from other buttons
+    btns.forEach(function (btn) {
+      btn.classList.remove("active");
+    });
+    e.target.classList.add("active");
+    // hide other articles
+    articles.forEach(function (article) {
+      article.classList.remove("active");
+    });
+    const element = document.getElementById(id);
+    element.classList.add("active");
+  }
+});
+
+
+
 // -----js for product gallery ----- product details
 
 var ProductImg = document.getElementById("ProductImg");

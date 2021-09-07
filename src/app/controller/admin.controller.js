@@ -5,10 +5,12 @@ const AddProductSchema = require('../../config/schema/product.schema');
 
 class AdminController {
     index(req, res) {
+        // console.log('1'+ req.params);
         res.render('pages/admin', {css: "/css/admin.css", title: 'admin',viewproduct: "Add Product", });
     }
 
     addProduct(req, res) {
+        // console.log('3' + req.params);
         addEditOrDeleModels.addProduct(req, res);
     }
 

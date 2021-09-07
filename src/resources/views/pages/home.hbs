@@ -1,181 +1,140 @@
-        {{> header }}
-        <div class="img-slider">
-            <div class="slide active">
-                <img src="images/silder/slider1.jpg" alt="">
-                <div class="info">
-                    <h2>Clothing</h2>
-                    <p>The style of clothing creates a person's personality . The style of clothing creates a person's personality</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="images/silder/slider2.jpg" alt="">
-                <div class="info">
-                    <h2>Clothing</h2>
-                    <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="images/silder/slider3.jpg" alt="">
-                <div class="info">
-                    <h2>Clothing</h2>
-                    <p>The style of clothing creates a person's personality.The style of clothing creates a person's personality</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="images/silder/slider4.jpg" alt="">
-                <div class="info">
-                    <h2>Clothing</h2>
-                    <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="images/silder/slider1.jpg" alt="">
-                <div class="info">
-                    <h2>Clothing</h2>
-                    <p>The style of clothing creates a person's personality. The style of clothing creates a person's personality</p>
-                </div>
-            </div>
-            <div class="navigation">
-                <div class="btn active"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-                <div class="btn"></div>
-            </div>
-        </div>
-
-  {{> admin/listProduct1 }}
-  
-  {{!-- <!---- featured categories ------>
-    <div class="small-container">
-        <h2 class="title">Products</h2>
-        <div class="row">
-            <div class="col-4">
-                <img src="images/detail/AnyConv.com__2.png">
-                <h4 > Sweater hoodie</h4>
-                <div class="rating">
-        
-                    
-                </div>
-                <p>$50.00</p>
-                <a href="#" class="btn">Add to cart</a>
-                <a href="#" class="btn">Buy now</a>
-            </div>
-        
-        </div>
-    </div> --}}
+    {{> header }}
 
 
-     <div class="small-container wrap-swiper">
-        <!-- Swiper -->
-        <h1 style="text-align: center;">Future product</h1>
-        <div class="swiper-container mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/detail/AnyConv.com__2.png" />
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
+    {{!-- slidershow --}}
+    <div id="canvas">
+            <div class="arrow" ><img id="left" src="./images/left-arrow.png" class="image"></div>
+            <div class="arrow" ><img id="right" src="./images/right-arrow.png" class="image"></div>
     </div>
 
+    <div class="container">
+        <section class="section-center">
+        <!-- image -->
+            <article class="gift-img">
+                <img id="img-save" src="./images/save.png" alt="gift" />
+            </article>
+            <!-- info -->
+            <article class="gift-info">
+                <h3>Giveaway Covid</h3>
+                <h4>
+                    Giveaway on Sunday, 30 september 2021, 23:59PM
+                </h4>
+                <p id="paragraph">
+                     #Win one of FOUR gift certificates to 9thandElm.com, a site devoted to handmade fashion items from amazing designers! $200 for one winner, $100 each to two winners! #giveaway via @simplystacienet ENDS…
+                </p>
+                <div class="deadline">
+            
+                <div class="deadline-format">
+                    <div>
+                    <h4 class="days" class="giveaway">20</h4>
+                    <span>days</span>
+                    </div>
+                </div>
+               
+                <div class="deadline-format">
+                    <div>
+                    <h4 class="hours" class="giveaway">50</h4>
+                    <span>hours</span>
+                    </div>
+                </div>
+                
+                <div class="deadline-format">
+                    <div>
+                    <h4 class="minutes" class="giveaway">30</h4>
+                    <span>mins</span>
+                    </div>
+                </div>
+               
+                <div class="deadline-format">
+                    <div>
+                    <h4 class="seconds">20</h4>
+                    <span>secs</span>
+                    </div>
+                </div>
+              
+                </div>
+            </article>
+        </section>
+       
+    </div>
+
+    {{!-- about  --}}
+    <div class="container">
+        <section class="section">
+            <div class="title">
+                <h2>about</h2>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+                aperiam!
+                </p>
+            </div>
+
+            <div class="about-center section-center">
+                <article class="about-img">
+                <img src="./hero-bcg.jpeg" alt="" />
+                </article>
+                <article class="about">
+                <!-- btn container -->
+                <div class="btn-container">
+                    <button class="tab-btn active" data-id="history">history</button>
+                    <button class="tab-btn" data-id="vision">vision</button>
+                    <button class="tab-btn" data-id="goals">goals</button>
+                </div>
+                <div class="about-content">
+                    <!-- single item -->
+                    <div class="content active" id="history">
+                    <h4>history</h4>
+                    <p>
+                        I'm baby wolf pickled schlitz try-hard normcore marfa man bun
+                        mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
+                        rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
+                        tilde try-hard, woke fixie banjo man bun. Small batch tumeric
+                        mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
+                        direct trade hoodie ugh chambray, craft beer pork belly flannel
+                        tacos single-origin coffee art party migas plaid pop-up.
+                    </p>
+                    </div>
+                    <!-- end of single item -->
+                    <!-- single item -->
+                    <div class="content" id="vision">
+                    <h4>vision</h4>
+                    <p>
+                        Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
+                        crucifix offal deep v hella biodiesel. Church-key listicle
+                        polaroid put a bird on it chillwave palo santo enamel pin,
+                        tattooed meggings franzen la croix cray. Retro yr aesthetic four
+                        loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
+                        Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
+                        Roof party hammock master cleanse pop-up truffaut, bicycle
+                        rights skateboard affogato readymade sustainable deep v
+                        live-edge schlitz narwhal.
+                    </p>
+                    
+                    </div>
+                    <!-- end of single item -->
+                    <!-- single item -->
+                    <div class="content" id="goals">
+                    <h4>goals</h4>
+                    <p>
+                        Chambray authentic truffaut, kickstarter brunch taxidermy vape
+                        heirloom four dollar toast raclette shoreditch church-key.
+                        Poutine etsy tote bag, cred fingerstache leggings cornhole
+                        everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
+                        swag, mixtape hashtag marfa readymade direct trade man braid
+                        cold-pressed roof party. Small batch adaptogen coloring book
+                        heirloom. Letterpress food truck hammock literally hell of wolf
+                        beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
+                        banh mi salvia venmo photo booth quinoa chicharrones.
+                    </p>
+                    </div>
+                    <!-- end of single item -->
+                </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+  
     {{> footer}}
-     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
 
-  <!-- Initialize Swiper -->
-  <script>
-       var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        },
-      
-      });
-  </script>
-
-    <script type="text/javascript">
-        var slides = document.querySelectorAll('.slide');
-        var btns = document.querySelectorAll('.btn');
-        let currentSlide = 1;
-    
-        // Javascript for image slider manual navigation
-        var manualNav = function(manual){
-          slides.forEach((slide) => {
-            slide.classList.remove('active');
-    
-            btns.forEach((btn) => {
-              btn.classList.remove('active');
-            });
-          });
-    
-          slides[manual].classList.add('active');
-          btns[manual].classList.add('active');
-        }
-    
-        btns.forEach((btn, i) => {
-          btn.addEventListener("click", () => {
-            manualNav(i);
-            currentSlide = i;
-          });
-        });
-    
-        // Javascript for image slider autoplay navigation
-        var repeat = function(activeClass){
-          let active = document.getElementsByClassName('active');
-          let i = 1;
-    
-          var repeater = () => {
-            setTimeout(function(){
-              //console.log([...active]);
-              [...active].forEach((activeSlide) => {
-                activeSlide.classList.remove('active');
-              });
-    
-            slides[i].classList.add('active');
-            btns[i].classList.add('active');
-            i++;
-    
-            if(slides.length == i){
-              i = 0;
-            }
-            if(i >= slides.length){
-              return;
-            }
-            repeater();
-          }, 3000);
-          }
-          repeater();
-        }
-        repeat();
-    </script>

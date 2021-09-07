@@ -2,10 +2,11 @@ const AddProductSchema = require('../../config/schema/product.schema');
 
 class AddProduct {
     async addProduct(req, res){
-
+        let path='';
+        if(req.file)
+            path = req.file.path.split('\\').slice(2).join('\\');
         if(req.body.id == ''){
             //add product
-            let path = req.file.path.split('\\').slice(2).join('\\');
             const product = new AddProductSchema({
                 title: req.body.title,
                 price: req.body.price,
@@ -15,9 +16,11 @@ class AddProduct {
             res.redirect('/listProducts')
         }else{
             //updateRecord
+            console.log('2' + req.params);
+            console.log(req.body);
             AddProductSchema.findOneAndUpdate(
                 {_id:req.body.id},
-                req.body,
+                {title: req.body.title, price: req.body.price, productImage: path},
                 {new: true},
                 (err, doc)=>{
                     if(!err){
