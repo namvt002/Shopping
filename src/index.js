@@ -4,24 +4,28 @@ const app = express();
 const handlebars = require('express-handlebars');
 const { extname } = require('path');
 const route = require('./routes');
-const db = require('./config/db');
+const db = require('./config/db/index');
 const session = require('express-session');
 var bodyParser = require("body-parser");
+const mysql = require('mysql');
 
-db.connect();
+require('dotenv').config();
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname,'public')));
 app.engine('hbs', handlebars(
    { extname: '.hbs' }
 ));
 
-// su dung post
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
+
 
 //body-parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+
+
 
 
 app.set('view engine', 'hbs');

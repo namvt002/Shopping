@@ -1,6 +1,4 @@
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">User Management System</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -21,8 +19,30 @@
 
       </div>
     </div>
-  </nav>
-  
- <div class="container pt-5 pb-5">
-     {{> admin/view rows}}
-  </div>
+  </nav> 
+    
+
+    <div class="container pt-5 pb-5">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit User</li>
+            </ol>
+        </nav>
+
+        {{#if alert}}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{alert}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {{/if}}
+        {{#each rows}}
+            <form class="row g-3 needs-validation" method="post" action="/admin/edituser/{{this.id}}" novalidate>
+                {{> admin/user-form}}
+            </form>
+                
+        {{/each}}
+       
+    </div>
+   

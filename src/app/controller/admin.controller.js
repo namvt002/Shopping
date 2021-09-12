@@ -1,52 +1,96 @@
-const addEditOrDeleModels = require('../models/addEditOrDele.model');
-const listProductsModels = require('../models/listProduct.model');
+const mysql = require('mysql');
+require('dotenv').config();
 
-const AddProductSchema = require('../../config/schema/product.schema');
+const connection = mysql.createConnection({
+    connectionLimit : 100,
+    host            : process.env.DB_HOST,
+    user            : process.env.DB_USER,
+    password        : process.env.DB_PASS,
+    database        : process.env.DB_NAME,
+});
 
-class AdminController {
-    index(req, res) {
-        // console.log('1'+ req.params);
-        res.render('pages/admin', {css: "/css/admin.css", title: 'admin',viewproduct: "Add Product", });
-    }
 
-    addProduct(req, res) {
-        // console.log('3' + req.params);
-        addEditOrDeleModels.addProduct(req, res);
-    }
+exports.view = (req, res) =>{
 
-    async listProducts(req, res){
-        // let product = [];
-       let product = await listProductsModels.getProduct(req, res);
-        res.render('pages/listProducts',
-            {
-                css: "/css/listproduct.css", title: 'ListProduct',
-                listproduct: product,
-            }
-        );
-    }
-
-    // listProducts(req, res){
-    //     AddProductSchema.find({}).then(products =>{
-    //         res.render('pages/listProducts',{
-    //             css: "/css/listproduct.css", title: 'ListProduct',
-    //             listproduct: products.map(product => product.toJSON()),
-    //         })
-    //     });
-    // }
-
-    edit(req, res) {
-        AddProductSchema.findById(req.params.id,(err, editProduct) => {
-            if(!err){
-                res.render('pages/admin',{
-                    viewproduct: "Edit Product",
-                    css: "/css/admin.css", title: 'admin',
-                    edit: editProduct.toJSON(),
-                });
-            }
-        })
-    }
-
-   
+    connection.query('SELECT * FROM user WHERE status = "active"', (err, rows) => {
+        // When done with the connection, release it
+        if (!err) {
+        //   let removedUser = req.query.removed;
+          res.render('pages/admin', {css: "/css/admin.css", title: 'admin', rows});
+        } else {
+          console.log(err);
+        }
+        // console.log('The data from user table: \n', rows);
+      });
 }
 
-module.exports = new AdminController();
+exports.find = (req, res) => {
+
+    let searchTerm = req.body.search;
+    // User the connection
+    connection.query('SELECT * FROM user WHERE first_name LIKE ? OR last_name LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
+        if (!err) {
+            res.render('pages/admin', {css: "/css/admin.css", title: 'admin', rows});
+        } else {
+        console.log(err);
+        }
+        // console.log('The data from user table: \n', rows);
+    });
+}
+
+// Add new user
+exports.form = (req, res) => {
+    res.render('partials/admin/add-user');
+}
+
+exports.create = (req, res) => {
+
+    const { first_name, last_name, email, phone, comments } = req.body;
+  
+    connection.query('INSERT INTO user SET first_name = ?, last_name = ?, email = ?, phone = ?, comments = ?', [first_name, last_name, email, phone, comments], (err, rows) => {
+      if (!err) {
+        res.render('partials/admin/add-user', { alert: 'User added successfully.' });
+      } else {
+        console.log(err);
+      }
+    //   console.log('The data from user table: \n', rows);
+    });
+}
+
+// Edit user
+// return id
+exports.edit = (req, res) => {
+
+    connection.query('SELECT * FROM user WHERE id = ?', [req.params.id], (err, rows) => {
+      if (!err) {
+        res.render('partials/admin/edit-user', { rows });
+      } else {
+        console.log(err);
+      }
+    //   console.log('The data from user table: \n', rows);
+    });
+}
+
+exports.update = (req, res) => {
+    const { first_name, last_name, email, phone, comments } = req.body;
+    // User the connection
+    connection.query('UPDATE user SET first_name = ?, last_name = ?, email = ?, phone = ?, comments = ? WHERE id = ?', [first_name, last_name, email, phone, comments, req.params.id], (err, rows) => {
+  
+      if (!err) {
+        // User the connection
+        connection.query('SELECT * FROM user WHERE id = ?', [req.params.id], (err, rows) => {
+          // When done with the connection, release it
+          
+          if (!err) {
+            res.render('partials/admin/edit-user', { rows, alert: `${first_name} has been updated.` });  
+          } else {
+            console.log(err);
+          }
+          console.log('The data from user table: \n', rows);
+        });
+      } else {
+        console.log(err);
+      }
+      console.log('The data from user table: \n', rows);
+    });
+  }

@@ -262,7 +262,7 @@ h4 {
 
 .tab-btn:hover:not(.active) {
   background: #ebf7ff;
-  color: var(--clr-primary-5); }
+  color: #49a6e9; }
 
 .about-content {
   border-bottom-left-radius: 0.5rem;
