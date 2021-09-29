@@ -1,0 +1,58 @@
+    <div class="mt-4">
+        <div class="form-floating mb-3">
+            <label for="validationCustomUsername" class="form-label">Product Name</label>
+            <div class="input-group has-validation">
+                <input type="text" class="form-control" id="validationCustomUsername" id="floatingInput" value="{{this.product_name}}" placeholder="Product Name" name="product_name"  aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please choose a Product Name.
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <div class="form-floating mb-3">
+            <label for="validationCustomUsername" class="form-label">Price</label>
+            <div class="input-group has-validation">
+                <input type="text" class="form-control" id="validationCustomUsername" id="floatingInput" value="{{this.price}}"  placeholder="Price" name="price"  aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                        Please choose a Price.
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4">
+         <div class="form-floating mb-3">
+            <label for="validationCustomUsername" class="form-label">Product Image</label>
+            <div class="input-group has-validation">
+                 <input type="file" class="form-control form-control-lg" id="formFileLg" id="validationCustomUsername"  name="sampleFile" value="{{this.product_image}}" aria-describedby="inputGroupPrepend" required/>
+                {{!-- <input type="text" class="form-control" id="validationCustomUsername" id="floatingInput" value="{{this.price}}"  placeholder="Price" name="price"  aria-describedby="inputGroupPrepend" required> --}}
+                    <div class="invalid-feedback">
+                        Please choose a Image.
+                    </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="mt-4">
+         <div class="col-12">
+            <div class="form-floating mb-3">
+                <label for="validationCustomUsername" class="form-label">Description</label>
+                <div class="input-group has-validation">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="description" name="description" style="height: 200px" aria-describedby="inputGroupPrepend" required/>{{this.description}}</textarea>
+                        <div class="invalid-feedback">
+                            Please choose a description.
+                        </div>
+                </div>
+            </div>
+         </div>
+        
+    </div>
+
+
+    <div class="col-12 d-grid">
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </div>
+
+    

@@ -1,0 +1,92 @@
+ {{>header}}
+
+ 
+ <div class="account-page">
+
+    {{#if alert}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{alert}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {{/if}}
+        <div class="containerAccount">
+            <div class="rowAccount">
+                <div class="columsAccount">
+                    <div class="effect">
+                        <img src="images/Effect/1.png" data-speed="-5" class="layer">  
+                        <img src="images/Effect/2.png" data-speed="5" class="layer">  
+                        <img src="images/Effect/3.png" data-speed="2" class="layer">  
+                        <img src="images/Effect/4.png" data-speed="6" class="layer">  
+                        <img src="images/Effect/5.png" data-speed="8" class="layer">  
+                        <img src="images/Effect/6.png" data-speed="-2" class="layer">  
+                        <img src="images/Effect/7.png" data-speed="4" class="layer">  
+                        <img src="images/Effect/8.png" data-speed="-9" class="layer">  
+                        <img src="images/Effect/9.png" data-speed="6" class="layer">  
+                        <img src="images/Effect/10.png" data-speed="-7" class="layer">  
+                        <img src="images/Effect/11.png" data-speed="-5" class="layer">  
+                        <img src="images/Effect/1.png" data-speed="-5" class="layer">  
+                        <h1 class="layer" data-speed="2">A&T</h1> 
+                    </div>
+                </div>
+                <div class="columsAccount">
+                    <div class="form-containerAccount">
+                        <div class="formbtn">
+                            <span onclick="convertRegister()">Register</span>
+                        </div>
+                        <form id="RegisterForm" action="register"  method="POST" encType="multipart/form-data">
+                            <input class="input-form" type="text" name="first_name" placeholder="First name" required>
+                            <input class="input-form" type="text" name="last_name" placeholder="Last name" required>
+                            <input class="input-form" type="text" name="user_name" id="" placeholder="Username" required>
+                            <input class="input-form" type="password" name="password" id="" placeholder="Password" required>
+                            <input class="input-form" type="password" name="re-password" id="" placeholder="Re-password" required>
+                            <input class="input-form" type="text" name="phone" placeholder="Phone" required>
+                            <input class="input-form" type="email" name="email" placeholder="Email" required>
+                            <input class="input-form" type="text" name="address" placeholder="Address" required>
+                            {{!-- <th scope="row"><h6>Avatar</h6></th> --}}
+                            <input type="file" class="input-form" name="sampleFile" required/>
+                            {{!-- <th scope="row"><h6>Gender</h6></th>  --}}
+                            <label style="font-size: 17px;" for="">Male</label>
+                            <input type="radio" name="gender" class="gender" value="male">
+                            <label style="font-size: 17px;" for="">Female</label>
+                            <input type="radio" name="gender" class="gender" value="female">
+                            <label style="font-size: 17px;" for="">Other</label>
+                            <input type="radio" name="gender" class="gender" value="other">
+                            <input type="submit" class="btnAccount" value="Register">
+                        </form>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{> footer}}
+
+    <script>
+          var LoginForm = document.getElementById("LoginForm");
+        var RegisterForm = document.getElementById("RegisterForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function convertRegister(){
+            RegisterForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+
+        function convertLogin(){
+            RegisterForm.style.transform = "translateX(500px)";
+            LoginForm.style.transform = "translateX(500px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+
+        document.addEventListener("mousemove", Shopping);
+        
+        function Shopping(e){
+            this.querySelectorAll(".layer").forEach(layer =>{
+                const speed = layer.getAttribute("data-speed");
+                const x = (window.innerWidth - e.pageX*speed)/100;
+                const y = (window.innerHeight - e.pageY*speed)/100;
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            })
+        }
+    </script>

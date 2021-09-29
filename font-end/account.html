@@ -14,34 +14,13 @@
 </head>
 <body>
  
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <!-- <img src="images/logo.png" alt="logo" with="110px" height="40px"> -->
-                <h1>A&T</h1>
-            </div>
-            <nav>
-                <ul id="MenuItems">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Account</a></li>
-                </ul>
-            </nav>
-            <a href=""><img src="images/cart.png" with="30px" height="30px"></a>
-            <a href=""  class="logo-account"><img src="images/account.png" with="50px" height="50px" > <p> My account</p></a>
-            <a href=""> <img src="images/menu.png" class="menu-icon" 
-              onclick="menutoggle()"></a>
-        </div>
-    </div>
 
     <!-----account-page----->
 
     <div class="account-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
+        <div class="containerAccount">
+            <div class="rowAccount">
+                <div class="columsAccount">
                     <div class="effect">
                         <img src="images/Effect/1.png" data-speed="-5" class="layer">  
                         <img src="images/Effect/2.png" data-speed="5" class="layer">  
@@ -58,9 +37,9 @@
                         <h2 class="layer" data-speed="2">Shopping</h2> 
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="form-container">
-                        <div class="form-btn">
+                <div class="columsAccount">
+                    <div class="form-containerAccount">
+                        <div class="formbtn">
                             <span onclick="convertLogin()">Login</span>
                             <span onclick="convertRegister()">Register</span>
                             <hr id="Indicator"> 
@@ -72,6 +51,9 @@
                             <a href="#">Forgot password?</a>
                         </form>
                         <form id="RegisterForm"action="" Method="POST">
+                            <input class="input-form" type="text" name="first_name" placeholder="First name">
+                            <input class="input-form" type="text" name="last_name" placeholder="First name">
+                            <input class="input-form" type="text" name="phone" placeholder="Phone">
                             <input class="input-form" type="text" name="username" id="" placeholder="Username">
                             <input class="input-form" type="password" name="re-password" id="" placeholder="Re-password">
                             <input class="input-form" type="password" name="password" id="" placeholder="Password">
@@ -104,8 +86,8 @@
         }
 
         function convertLogin(){
-            RegisterForm.style.transform = "translateX(300px)";
-            LoginForm.style.transform = "translateX(300px)";
+            RegisterForm.style.transform = "translateX(500px)";
+            LoginForm.style.transform = "translateX(500px)";
             Indicator.style.transform = "translateX(0px)";
         }
 

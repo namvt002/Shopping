@@ -38,31 +38,31 @@ p{
     color: #555;
 }
 
-.container{
+.containerAccount{
     max-width: 1300px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
 }
 
-.row{
+.rowAccount{
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* cho phep nam tren cung mot hang du cho container thay doi*/
+    flex-wrap: wrap; /* cho phep nam tren cung mot hang du cho containerAccount thay doi*/
     justify-content: space-around;
 }
 
-.col-2{
+.columsAccount{
     flex-basis: 50%; /* danh ra 50% khung hinh cho anh nen */
     min-width: 300px;
 }
 
-.col-2 img{
+.columsAccount img{
     max-width: 100%;
     /* padding: 50px 0; */
 }
 
-.col-2 h1{
+.columsAccount h1{
     font-size: 50px;
     line-height: 60px;
     margin: 25px 0;
@@ -89,7 +89,7 @@ p{
 }
 */
 
-.header .row{
+.header .rowAccount{
     margin-top: 70px;
 }
 
@@ -107,7 +107,7 @@ p{
     width: 100%;
 }
 
-.small-container{
+.small-containerAccount{
     max-width: 1080px;
     margin: auto;
     padding-left: 25px;
@@ -194,7 +194,7 @@ h4{
     margin-bottom: 20px;
 }
 
-.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+.footer-col-1, .footer-columsAccount, .footer-col-3, .footer-col-4 {
     min-width: 250px;
     margin-bottom: 20px; 
 }
@@ -203,12 +203,12 @@ h4{
     flex-basis: 30%;
 }
 
-.footer-col-2{
+.footer-columsAccount{
     flex: 1;
     text-align: center;
 }
 
-.footer-col-2 img{
+.footer-columsAccount img{
     width: 180px;
     margin-bottom: 20px;
 }
@@ -279,10 +279,10 @@ ul{
     /* background: radial-gradient(#fff, #ffd6d6); */
 }
 
-.form-container{
+.form-containerAccount{
     background:#fff;
-    width: 300px;
-    height: 400px;
+    width: 500px;
+    height: 600px;
     position:relative;
     text-align: center;
     padding: 20px 0;
@@ -291,7 +291,7 @@ ul{
     overflow: hidden;
 }
 
-.form-container span{
+.form-containerAccount span{
     font-weight: bold;
     padding: 0 10px;
     color: #555;
@@ -300,19 +300,19 @@ ul{
     display:inline-block;
 }
 
-.form-btn{
+.formbtn{
     display: inline-block;
 }
 
-.form-container form{
-    max-width: 300px;
+.form-containerAccount form{
+    max-width: 500px;
     padding: 0 20px;
     position: absolute;
     top: 110px;
     transition: transform 1s;
 }
 
-.form-container #RegisterForm{
+.form-containerAccount #RegisterForm{
     top: 80px;
 }
 
@@ -342,7 +342,7 @@ form .btn:focus{
 }
 
 #LoginForm{
-    left: -300px;
+    left: -500px;
 }
 
 #RegisterForm{
@@ -393,16 +393,16 @@ form a{
 }
 
 @media only screen and (max-width: 600px){
-    .row{
+    .rowAccount{
         text-align: center;
     }
-    .col-2, .col-3, .col-4{
+    .columsAccount, .col-3, .col-4{
         flex-basis: 100%;
     }
-    .single-product .row{
+    .single-product .rowAccount{
         text-align: left;
     }
-    .single-product .col-2{
+    .single-product .columsAccount{
         padding: 20px 0;
     }
     .single-product h1{

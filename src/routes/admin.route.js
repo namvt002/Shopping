@@ -1,19 +1,17 @@
 const express = require('express');
 const route = express.Router();
-const admincontroller = require('../app/controller/admin.controller');
+const adminController = require('../app/controller/admin.controller');
 const uploadProduct = require('../util/uploadProduct.file');
 
+// route.post('/addProduct', uploadProduct.index().single('productImage'), adminController.addProduct);
 
-// route.get('/edit/:id', admincontroller.edit)
-// route.get('/listProducts', admincontroller.listProducts);
-// route.post('/addProduct', uploadProduct.index().single('productImage'), admincontroller.addProduct);
-
-
-route.get('/', admincontroller.view);
-route.post('/', admincontroller.find);
-route.get('/adduser', admincontroller.form);
-route.post('/adduser', admincontroller.create);
-route.get('/edituser/:id', admincontroller.edit);
-route.post('/edituser/:id', admincontroller.update);
+route.get('/', adminController.view);
+route.post('/', adminController.find);
+route.get('/addproduct', adminController.form);
+route.post('/addproduct', adminController.create);
+route.get('/editproduct/:id', adminController.edit);
+route.post('/editproduct/:id', adminController.update);
+route.get('/:id',adminController.delete);
+// route.get('/viewproduct/:id', adminController.viewall);
 
 module.exports = route;

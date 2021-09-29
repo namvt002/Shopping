@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- trung -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- trung -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+
+
+/* User Cards */
+.user-box {
+    width: 110px;
+    margin: auto;
+    margin-bottom: 20px;
+    
+}
+
+.user-box img {
+    width: 100%;
+    border-radius: 50%;
+	padding: 3px;
+	background: #fff;
+}
+
+.profile-card-2 .card {
+	position:relative;
+}
+
+.profile-card-2 .card .card-body {
+	z-index:1;
+}
+
+.profile-card-2 .card::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+	border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    height: 112px;
+    background-color: #e6e6e6;
+}
+
+
+
+.profile-card-4 .user-box {
+    width: 110px;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.profile-card-4 .list-icon {
+    display: table-cell;
+    font-size: 30px;
+    padding-right: 20px;
+    vertical-align: middle;
+    color: #223035;
+}
+
+.profile-card-4 .list-details {
+	display: table-cell;
+	vertical-align: middle;
+	font-weight: 600;
+    color: #223035;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.profile-card-4 .list-details small{
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 12px;
+	font-weight: 400;
+    color: #808080;
+}
+
+/*Nav Tabs & Pills */
+.nav-tabs .nav-link {
+    color: #223035;
+	font-size: 12px;
+    text-align: center;
+	letter-spacing: 1px;
+    font-weight: 600;
+	margin: 2px;
+    margin-bottom: 0;
+	padding: 12px 20px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+	
+}
+.nav-tabs .nav-link:hover{
+    border: 1px solid transparent;
+}
+.nav-tabs .nav-link i {
+    margin-right: 2px;
+	font-weight: 600;
+}
+
+.top-icon.nav-tabs .nav-link i{
+	margin: 0px;
+	font-weight: 500;
+	display: block;
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+.nav-tabs-primary.nav-tabs{
+	border-bottom: 1px solid #008cff;
+}
+
+.nav-tabs-primary .nav-link.active, .nav-tabs-primary .nav-item.show>.nav-link {
+    color: #008cff;
+    background-color: #fff;
+    border-top: 3px solid #008cff;
+}
+
+
+
+.nav-tabs-info.nav-tabs{
+	border-bottom: 1px solid #0dceec;
+}
+
+.nav-tabs-info .nav-link.active, .nav-tabs-info .nav-item.show>.nav-link {
+    color: #0dceec;
+    background-color: #fff;
+    border-top: 3px solid #0dceec;
+}
+
+
+.nav-tabs-warning.nav-tabs{
+	border-bottom: 1px solid #ff9700;
+}
+
+.nav-tabs-dark.nav-tabs{
+	border-bottom: 1px solid #223035;
+}
+
+.nav-tabs-dark .nav-link.active, .nav-tabs-dark .nav-item.show>.nav-link {
+    color: #223035;
+    background-color: #fff;
+    border-top: 3px solid #223035;
+}
+
+.nav-tabs-secondary.nav-tabs{
+	border-bottom: 1px solid #75808a;
+}
+.nav-tabs-secondary .nav-link.active, .nav-tabs-secondary .nav-item.show>.nav-link {
+    color: #75808a;
+    background-color: #fff;
+    border-top: 3px solid #75808a;
+}
+
+.tabs-vertical .nav-tabs .nav-link {
+    color: #223035;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 2px;
+    margin-right: -1px;
+    padding: 12px 1px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #dee2e6;
+}
+
+
+.tabs-vertical-primary.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #008cff;
+}
+
+
+.tabs-vertical-success.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #15ca20;
+}
+
+
+.tabs-vertical-info.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #0dceec;
+}
+
+.tabs-vertical-info.tabs-vertical .nav-tabs .nav-item.show .nav-link, .tabs-vertical-info.tabs-vertical .nav-tabs .nav-link.active {
+    color: #0dceec;
+    background-color: #fff;
+    border-color: #0dceec #0dceec #fff;
+    border-bottom: 1px solid #0dceec;
+    border-right: 0;
+    border-left: 3px solid #0dceec;
+}
+
+
+.tabs-vertical-warning.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #ff9700;
+}
+
+
+.tabs-vertical-dark.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #223035;
+}
+
+
+
+.tabs-vertical-secondary.tabs-vertical .nav-tabs{
+	border:0;
+	border-right: 1px solid #75808a;
+}
+
+.tabs-vertical-secondary.tabs-vertical .nav-tabs .nav-item.show .nav-link, .tabs-vertical-secondary.tabs-vertical .nav-tabs .nav-link.active {
+    color: #75808a;
+    background-color: #fff;
+    border-color: #75808a #75808a #fff;
+    border-bottom: 1px solid #75808a;
+    border-right: 0;
+    border-left: 3px solid #75808a;
+}
+
+.nav-pills .nav-link {
+    border-radius: .25rem;
+    color: #223035;
+    font-size: 12px;
+    text-align: center;
+	letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+	margin: 3px;
+    padding: 12px 20px;
+}
+
+.nav-pills .nav-link:hover {
+    background-color:#f4f5fa;
+}
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #008cff;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(0, 140, 255, 0.5);
+}
+
+
+.card .tab-content{
+	padding: 1rem 0 0 0;
+}
+
+.z-depth-3 {
+    -webkit-box-shadow: 0 11px 7px 0 rgba(0,0,0,0.19),0 13px 25px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 11px 7px 0 rgba(0,0,0,0.19),0 13px 25px 0 rgba(0,0,0,0.3);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-4">
+                   <div class="profile-card-4 z-depth-3">
+                    <div class="card">
+                      <div class="card-body text-center bg-primary rounded-top">
+                        <div class="user-box">
+                            <img  class="images-profile"
+                            src="../images/trung.png" alt="user avatar">
+                        </div>
+                        <h5 class="mb-1 text-white">Trung Tran</h5>
+                      </div>
+                      <div class="card-body">
+                            <ul class="list-group shadow-none">
+                                <li class="list-group-item">
+                                    <div class="list-icon">
+                                        <i class="fa fa-phone-square"></i>
+                                    </div>
+                                    <div class="list-details">
+                                        <small>Mobile Number</small>
+                                        <span>9910XXXXXX</span>
+                                    
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="list-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="list-details">
+                                        <small>Email Address</small>
+                                        <span>info@example.com</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    
+                                </li>
+                            </ul>
+                       </div>
+   
+                     </div>
+                   </div>
+                </div>
+                <div class="col-lg-8">
+                   <div class="card z-depth-3">
+                    <div class="card-body">
+                    <ul class="nav nav-pills nav-pills-primary nav-justified">
+                        <li class="nav-item">
+                            <a href="" data-target="#profile" data-toggle="pill" class="nav-link active show">
+                           Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-target="#messages" data-toggle="pill" class="nav-link">
+                            <span class="hidden-xs">Messages</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-target="#edit" data-toggle="pill" class="nav-link"> <span class="hidden-xs">Edit</span></a>
+                        </li>
+                    </ul>
+        
+
+                    <div class="tab-content p-3">
+                        <div class="tab-pane active" id="profile">
+                            <h5 class="mb-3">User Profile</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>About</h6>
+                                    <p>
+                                        Web Designer, UI/UX Engineer
+                                    </p>
+                                    <h6>Hobbies</h6>
+                                    <p>
+                                        Indie music, skiing and hiking. I love the great outdoors.
+                                    </p>
+                                </div>
+
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <div class="tab-pane" id="messages">
+                            <div class="alert alert-info alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert">×</button>
+                            <div class="alert-icon">
+                             <i class="icon-info"></i>
+                            </div>
+                            <div class="alert-message">
+                              <span><strong>Info!</strong> Lorem Ipsum is simply dummy text.</span>
+                            </div>
+                          </div>
+                            <table class="table table-hover table-striped">
+                                <tbody>                                    
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
+                                        </td>
+                                    </tr>
+                                </tbody> 
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="edit">
+                            <form>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="Mark">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="Jhonsan">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="email" value="mark@example.com">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Change profile</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="file">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="url" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="" placeholder="Street">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-6">
+                                        <input class="form-control" type="text" value="" placeholder="City">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input class="form-control" type="text" value="" placeholder="State">
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="text" value="jhonsanmark">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" value="11111122333">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                                    <div class="col-lg-9">
+                                        <input class="form-control" type="password" >
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                                    <div class="col-lg-9">
+                                        <input type="reset" class="btn btn-secondary" value="Cancel">
+                                        <input type="button" class="btn btn-primary" value="Save Changes">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div> 
+            </div>
+        </div>
+   <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -20,8 +20,10 @@
     "nodemon": "^2.0.12"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
+    "express-fileupload": "^1.2.1",
     "mysql": "^2.18.1",
     "start": "^5.1.0"
   }

@@ -1,22 +1,112 @@
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+
+.navbarmenu{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#navmenu{
+    flex: 10; /* ghim thanh menu */
+    text-align: right;
+    z-index: 3;
+}
+
+#navmenu #MenuItems{
+    display: inline-block;
+    list-style-type: none;
+}
+
+#navmenu #MenuItems .limenu{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.aMenu{
+    text-decoration: none;
+    color: #555;
+    font-size: 20px;
+}
+
+p{
+    color: #555;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
+
+
+.col-2 .offer-img{
+  padding: 50px;
+}
+
+
+#menuItems{
+  list-style-type: none;
+}
+
+.menu-icon{
+  width:28px;
+  margin-left: 20px;
+  display: none;   
+}
+
+.logo-account{
+  display:flex;
+  justify-content: center;
+  line-height: 90px;
+}
+
+.logo-account img{
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#myAccount{
+  text-decoration: none;
+  color: #555;
+}
+
+</style>
+
+
 <div class="header">
      <div class="container">
-        <div class="navbar">
+        <div class="navbarmenu">
             <div class="logo">
                 <!-- <img src="images/logo.png" alt="logo" with="110px" height="40px"> -->
                 <h1>A&T</h1>
             </div>
-            <nav>
+            <nav id="navmenu">
                 <ul id="MenuItems">
-                    <li><a href="home">Home</a></li>
-                    <li><a href="admin">Admin</a></li>
-                    <li><a href="">Products</a></li>              
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="account">Account</a></li>
+                    <li class='limenu'><a class='aMenu' href="home">Home</a></li>
+                    <li class='limenu'><a class='aMenu' href="admin">Admin</a></li>
+                    <li class='limenu'><a class='aMenu' href="">Products</a></li>                          
+                    <li class='limenu'><a class='aMenu' href="login">Login</a></li>
                 </ul>
             </nav>
-            <a href=""><img src="images/cart.png" with="30px" height="30px"></a>
-            <a href="profile"  class="logo-account"><img src="images/account.png" with="50px" height="50px" > <p> My account</p></a>
-            <a href=""> <img src="images/menu.png" class="menu-icon" 
+            <a class='aMenu' href=""><img src="images/cart.png" with="30px" height="30px"></a>
+            <a class='aMenu' href="profile" class="logo-account"><img src="images/account.png" with="50px" height="50px" > <span id="myAccount"> My account</span></a>
+            <a class='aMenu' href=""> <img src="images/menu.png" class="menu-icon" 
                 onclick="menutoggle()"></a>
         </div>
     </div>

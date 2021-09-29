@@ -1,96 +1,138 @@
+const fileUpload = require('express-fileupload');
 const mysql = require('mysql');
 require('dotenv').config();
-
-const connection = mysql.createConnection({
-    connectionLimit : 100,
-    host            : process.env.DB_HOST,
-    user            : process.env.DB_USER,
-    password        : process.env.DB_PASS,
-    database        : process.env.DB_NAME,
-});
+const product = require('../models/admin.models');
 
 
-exports.view = (req, res) =>{
+exports.view = async (req, res) =>{
+    try{
+      const rows = await product.view();
+      res.render('pages/admin', {css: "/css/admin.css", title: 'admin', rows: rows});
 
-    connection.query('SELECT * FROM user WHERE status = "active"', (err, rows) => {
-        // When done with the connection, release it
-        if (!err) {
-        //   let removedUser = req.query.removed;
-          res.render('pages/admin', {css: "/css/admin.css", title: 'admin', rows});
-        } else {
-          console.log(err);
-        }
-        // console.log('The data from user table: \n', rows);
-      });
+    }catch(err) {
+      console.log(err);
+    }
 }
 
-exports.find = (req, res) => {
+exports.find = async (req, res) => {
 
     let searchTerm = req.body.search;
-    // User the connection
-    connection.query('SELECT * FROM user WHERE first_name LIKE ? OR last_name LIKE ?', ['%' + searchTerm + '%', '%' + searchTerm + '%'], (err, rows) => {
-        if (!err) {
-            res.render('pages/admin', {css: "/css/admin.css", title: 'admin', rows});
-        } else {
-        console.log(err);
-        }
-        // console.log('The data from user table: \n', rows);
-    });
+    try{
+        const rows = await product.find([`%${searchTerm}%`]);
+        res.render('pages/admin', {css: "/css/admin.css", title: 'admin', rows: rows});
+    }catch(err) {
+      console.log(err);
+    }
 }
+
 
 // Add new user
 exports.form = (req, res) => {
-    res.render('partials/admin/add-user');
+    res.render('partials/admin/add-product', {title: 'admin'});
 }
 
-exports.create = (req, res) => {
+exports.create = async (req, res) => {
 
-    const { first_name, last_name, email, phone, comments } = req.body;
+  try{
+
+    const { product_name, price, description} = req.body;
+
+    let sampleFile;
+    let uploadPath;
   
-    connection.query('INSERT INTO user SET first_name = ?, last_name = ?, email = ?, phone = ?, comments = ?', [first_name, last_name, email, phone, comments], (err, rows) => {
-      if (!err) {
-        res.render('partials/admin/add-user', { alert: 'User added successfully.' });
-      } else {
-        console.log(err);
-      }
-    //   console.log('The data from user table: \n', rows);
+    // if (!req.files || Object.keys(req.files).length === 0) {
+    //   return res.status(400).send('No files were uploaded.');
+    // }
+
+    sampleFile = req.files.sampleFile;
+    // console.log(sampleFile);
+
+    let  product_image= Date.now() + '_' + sampleFile.name;
+    uploadPath = `src/public/image/product_img/`+ Date.now() + '_' + sampleFile.name;
+    
+    await sampleFile.mv(uploadPath, async(err)=>{
+      if(err) return res.status(500).send(err);
+      const newProduct = await product.createProduct({
+          product_name,
+          price,
+          product_image,
+          description,
+      });
     });
+    res.render('partials/admin/add-product', {title: 'Add Product', alert: 'Product added successfully.' });
+
+  }catch(err) { 
+    console.log(err);
+  }
 }
 
 // Edit user
 // return id
-exports.edit = (req, res) => {
+exports.edit = async (req, res) => {
 
-    connection.query('SELECT * FROM user WHERE id = ?', [req.params.id], (err, rows) => {
-      if (!err) {
-        res.render('partials/admin/edit-user', { rows });
-      } else {
-        console.log(err);
-      }
-    //   console.log('The data from user table: \n', rows);
-    });
+    try{
+        let idEdit = req.params.id;
+        const rows = await product.edit(idEdit);
+        res.render('partials/admin/edit-product', { title: 'Edit Product', rows });
+    }
+    catch (err) {
+      console.log(err);
+    }
 }
 
-exports.update = (req, res) => {
-    const { first_name, last_name, email, phone, comments } = req.body;
-    // User the connection
-    connection.query('UPDATE user SET first_name = ?, last_name = ?, email = ?, phone = ?, comments = ? WHERE id = ?', [first_name, last_name, email, phone, comments, req.params.id], (err, rows) => {
-  
-      if (!err) {
-        // User the connection
-        connection.query('SELECT * FROM user WHERE id = ?', [req.params.id], (err, rows) => {
-          // When done with the connection, release it
-          
-          if (!err) {
-            res.render('partials/admin/edit-user', { rows, alert: `${first_name} has been updated.` });  
-          } else {
-            console.log(err);
-          }
-          console.log('The data from user table: \n', rows);
-        });
-      } else {
-        console.log(err);
-      }
-      console.log('The data from user table: \n', rows);
-    });
+exports.update = async (req, res) => {
+    try{
+      const { product_name, price, description} = req.body;
+      let sampleFile;
+      let uploadPath;
+    
+      // if (!req.files || Object.keys(req.files).length === 0) {
+      //   return res.status(400).send('No files were uploaded.');
+      // }
+
+      sampleFile = req.files.sampleFile;
+      // console.log(sampleFile);
+
+      let  product_image = Date.now() + '_' + sampleFile.name;
+      uploadPath = `src/public/image/product_img/`+ Date.now() + '_' + sampleFile.name;
+      let id = req.params.id;
+      await sampleFile.mv(uploadPath, async(err)=>{
+        if(err) return res.status(500).send(err);
+        const update = await product.update(
+            product_name,
+            price,
+            product_image,
+            description,
+            id,
+        );
+      });
+      const rows = await product.edit(id);
+      res.render('partials/admin/edit-product', { title: 'Update Product', rows: rows, alert: `${product_name} has been updated.` });
+     
+    }catch(err) {
+      console.log(err);
+    }
   }
+
+  //delete
+
+  exports.delete = async (req, res) => {
+    try {
+      let id = req.params.id;
+      const rows = await product.delete(id);
+      res.redirect('/admin');
+    }catch(err) {
+      console.log(err);
+    }
+  }
+
+  exports.viewall = async (req, res) => {
+    try{
+        let id = req.params.id;
+        const rows = await product.viewall(id);
+        res.render('partials/admin/view-product', { rows: rows });
+    }catch(err){
+      console.log(err);
+    }
+  }
+

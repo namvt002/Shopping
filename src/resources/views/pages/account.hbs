@@ -1,9 +1,16 @@
-    <!-----account-page----->
-{{>header}}
-    <div class="account-page">
-        <div class="container">
-            <div class="row">
-                <div class="col-2">
+ {{>header}}
+
+ 
+ <div class="account-page">
+    {{#if alert}}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{alert}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {{/if}}
+        <div class="containerAccount">
+            <div class="rowAccount">
+                <div class="columsAccount">
                     <div class="effect">
                         <img src="images/Effect/1.png" data-speed="-5" class="layer">  
                         <img src="images/Effect/2.png" data-speed="5" class="layer">  
@@ -17,36 +24,41 @@
                         <img src="images/Effect/10.png" data-speed="-7" class="layer">  
                         <img src="images/Effect/11.png" data-speed="-5" class="layer">  
                         <img src="images/Effect/1.png" data-speed="-5" class="layer">  
-                        <h2 class="layer" data-speed="2">Shopping</h2> 
+                        <h1 class="layer" data-speed="2">A&T</h1> 
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="form-container">
-                        <div class="form-btn">
+                <div class="columsAccount">
+                    <div class="form-containerAccount">
+                        <div class="formbtn">
                             <span onclick="convertLogin()">Login</span>
                             <span onclick="convertRegister()">Register</span>
-                            <hr id="Indicator"> 
+                            <hr id="Indicator" style="background: #ff523b;"> 
                         </div>
-                        <form id="LoginForm" action="account/checkUser" method="post">
+                        <form id="LoginForm" action="account/login" method="POST" enctype="multipart/form-data">
+                            <img src="images/about/logo.png" alt="" height="200px">
                             <input class="input-form" type="text" name="username" id="" placeholder="Username">
                             <input class="input-form" type="password" name="password" id="" placeholder="Password">
-                            <input type="submit" class="btn" value="Login">
+                            <button type="submit" class="btnAccount">Login</button>
                             <a href="#">Forgot password?</a>
                         </form>
-                        <form id="RegisterForm" action="account/addUser" enctype="multipart/form-data" method="post">
-                            <input class="input-form" type="text" name="username" id="" placeholder="Username">
-                            <input class="input-form" type="password" name="re-password" id="" placeholder="Re-password">
+                        <form id="RegisterForm" action="account/register"  method="POST" encType="multipart/form-data">
+                            <input class="input-form" type="text" name="first_name" placeholder="First name">
+                            <input class="input-form" type="text" name="last_name" placeholder="Last name">
+                            <input class="input-form" type="text" name="user_name" id="" placeholder="Username">
                             <input class="input-form" type="password" name="password" id="" placeholder="Password">
-                            <input class="input-form" type="file" name="avatar" id="" style="font-size:12px">
-                            
-                            <label style="font-size: 13px;" for="">Male</label>
+                            <input class="input-form" type="password" name="re-password" id="" placeholder="Re-password">
+                            <input class="input-form" type="text" name="phone" placeholder="Phone">
+                            {{!-- <input class="input-form" type="file" name="sampleFile" accept="image/*" style="font-size:14px;  font-family: 'Poppins', sans-serif;color: #555;"> --}}
+                            {{!-- <input type="file" class="input-form" name="sampleFile" accept="image/*" /> --}}
+                            <input type="file" class="input-form" name="sampleFile" />
+                            <label style="font-size: 17px;" for="">Male</label>
                             <input type="radio" name="gender" class="gender" value="male">
-                            <label style="font-size: 13px;" for="">Female</label>
+                            <label style="font-size: 17px;" for="">Female</label>
                             <input type="radio" name="gender" class="gender" value="female">
-                            <label style="font-size: 13px;" for="">Other</label>
+                            <label style="font-size: 17px;" for="">Other</label>
                             <input type="radio" name="gender" class="gender" value="other">
-                            <input type="submit" class="btn" value="Register">
-                            
+                            <input type="submit" class="btnAccount" value="Register">
+                            {{!-- <button type="submit" class="btnAccount">Register</button>  --}}
                         </form>
                     </div>
                    
@@ -57,7 +69,7 @@
 
 {{> footer}}
 
-  <script>
+    <script>
         var LoginForm = document.getElementById("LoginForm");
         var RegisterForm = document.getElementById("RegisterForm");
         var Indicator = document.getElementById("Indicator");
@@ -69,8 +81,8 @@
         }
 
         function convertLogin(){
-            RegisterForm.style.transform = "translateX(300px)";
-            LoginForm.style.transform = "translateX(300px)";
+            RegisterForm.style.transform = "translateX(500px)";
+            LoginForm.style.transform = "translateX(500px)";
             Indicator.style.transform = "translateX(0px)";
         }
 
@@ -85,5 +97,4 @@
             })
         }
 
-        
     </script>

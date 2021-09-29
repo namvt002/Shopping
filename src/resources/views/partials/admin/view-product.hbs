@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">User Management System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+        </ul>
+
+        <form class="d-flex" method="POST" action="admin" novalidate>
+          <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+</nav>
+
+<div class="container pt-5 pb-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">View Product</li>
+        </ol>
+      </nav>
+
+    <div class="view-user p-5">
+    {{#each rows}}
+        <div class="row mb-5">
+            <div class="col text-center">
+            <h3>{{this.product_name}}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td scope="row">{{this.product_name}}</td>
+                        <td>{{this.price}}</td>
+                        <td>{{this.description}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <b>Image</b>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                  <img src="public/image/product_img/{{this.product_image}}"  class="rounded mx-auto d-block" style="width: 10rem;" alt="">
+                </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
+

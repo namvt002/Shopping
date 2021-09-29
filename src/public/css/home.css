@@ -7,49 +7,34 @@ body {
   font-family: 'Poppins', sans-serif;
   width: 100%; }
 
-.navbar {
+.navbarmenu {
   display: flex;
   align-items: center;
   padding: 20px; }
 
-nav {
+#navmenu {
   flex: 10;
   /* ghim thanh menu */
   text-align: right;
   z-index: 3; }
 
-nav ul {
+#navmenu #MenuItems {
   display: inline-block;
   list-style-type: none; }
 
-nav ul li {
+#navmenu #MenuItems .limenu {
   display: inline-block;
   margin-right: 20px; }
 
-a {
+.aMenu {
   text-decoration: none;
-  color: #555; }
+  color: #555;
+  font-size: 20px; }
 
 p {
   color: #555; }
 
-.container {
-  max-width: 1300px;
-  margin: auto;
-  padding-left: 25px;
-  padding-right: 25px; }
-
-.row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  /* cho phep nam tren cung mot hang du cho container thay doi*/
-  justify-content: space-around; }
-
-.col-2 .offer-img {
-  padding: 50px; }
-
-ul {
+#menuItems {
   list-style-type: none; }
 
 .menu-icon {
@@ -66,6 +51,10 @@ ul {
   display: flex;
   justify-content: center;
   margin-top: 20px; }
+
+#myAccount {
+  text-decoration: none;
+  color: #555; }
 
 #canvas {
   position: relative;
@@ -96,9 +85,6 @@ ul {
 
 .arrow:hover {
   background-color: #eb8bf8; }
-
-.section {
-  padding: 5rem 0; }
 
 .section-center {
   font-family: "Open Sans", sans-serif;
@@ -279,61 +265,8 @@ h4 {
 .content.active {
   display: block; }
 
-/* footer    */
-.footer {
-  background: #000;
-  color: #8a8a8a;
-  font-size: 14px;
-  padding: 60px 0 20px; }
-
-.footer p {
-  color: #8a8a8a; }
-
-.footer h3 {
-  color: #fff;
-  margin-bottom: 20px; }
-
-.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
-  min-width: 250px;
-  margin-bottom: 20px; }
-
-.footer-col-1 {
-  flex-basis: 30%; }
-
-.footer-col-2 {
-  flex: 1;
-  text-align: center; }
-
-.footer-col-2 img {
-  width: 180px;
-  margin-bottom: 20px; }
-
-.footer-col-3, .footer-col-4 {
-  flex-basis: 12%;
-  text-align: center; }
-
-ul {
-  list-style-type: none; }
-
-.app-logo {
-  margin-top: 20px; }
-
-.app-logo img {
-  width: 140px; }
-
-.footer hr {
-  border: none;
-  background: #b5b5b5;
-  height: 1px;
-  margin: 20px 0; }
-
-.Copyright {
-  text-align: center; }
-
-.menu-icon {
-  width: 28px;
-  margin-left: 20px;
-  display: none; }
+.card-product-item {
+  margin: 17px 0; }
 
 /* media query for menu */
 @media only screen and (max-width: 800px) {

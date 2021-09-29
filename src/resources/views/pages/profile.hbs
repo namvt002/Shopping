@@ -1,1 +1,208 @@
-{{> profile/profile profile}}
+
+ {{>header}}
+
+ <div class="container" style="margin-top: 80px;margin-bottom: 100px;">
+        <div class="row mt-4" >
+                <div class="col-lg-4">
+                   <div class="profile-card-4 z-depth-3">
+                    <div class="card">
+                      <div class="card-body text-center bg-primary rounded-top">
+                        <div class="user-box">
+                            <img  class="images-profile"
+                            src="image/user_img/{{result.avatar}}" alt="user avatar">
+                        </div>
+                        <h5 class="mb-1 text-white">{{result.last_name}} {{result.first_name}}</h5>
+                      </div>
+                      <div class="card-body">
+                            <ul class="list-group shadow-none">
+                                <li class="list-group-item">
+                                    <div class="list-icon">
+                                        <i class="fa fa-phone-square"></i>
+                                    </div>
+                                    <div class="list-details">
+                                        <small>Phone Number</small>
+                                        <span>{{result.phone}}</span>
+                                    
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="list-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="list-details">
+                                        <small>Email Address</small>
+                                        <span>{{result.email}}</span>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                     <a href="/logout" class="btn btn-primary">Logout</a>
+                                </li>
+                            </ul>
+                       </div>
+   
+                     </div>
+                   </div>
+                </div>
+                <div class="col-lg-8">
+                   <div class="card z-depth-3">
+                    <div class="card-body">
+                    <ul class="nav nav-pills nav-pills-primary nav-justified">
+                        <li class="nav-item">
+                            <a href="" data-target="#profile" data-toggle="pill" class="nav-link active show">
+                           Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-target="#messages" data-toggle="pill" class="nav-link">
+                            <span class="hidden-xs">Messages</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-target="#edit" data-toggle="pill" class="nav-link"> <span class="hidden-xs">Edit</span></a>
+                        </li>
+                    </ul>
+        
+
+                    <div class="tab-content mt-4">
+                        <div class="tab-pane active" id="profile">
+                            {{!-- <h3 class="mb-3">User Profile</h3> --}}
+                             {{#if alert}}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{alert}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {{/if}}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table class="table table-borderless">
+                                        <tr>
+                                            <th scope="row"><h6>ID User</h6></th>
+                                            <td><p>{{result.id}}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><h6>Username</h6></th>
+                                            <td><p>{{result.user_name}}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"> <h6>Gender</h6></th>
+                                            <td><p>{{result.gender}}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"> <h6>Phone</h6></th>
+                                            <td><p>{{result.phone}}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"> <h6>Email</h6></th>
+                                            <td><p>{{result.email}}</p></td>
+                                        </tr>
+                                         <tr>
+                                            <th scope="row"> <h6>Address</h6></th>
+                                            <td><p>{{result.address}}</p></td>
+                                        </tr>
+                                    </table>    
+                                    
+                                   
+                                   
+                                </div>
+
+                            </div>
+                            <!--/row-->
+                        </div>
+                        <div class="tab-pane" id="messages">
+                            <div class="alert alert-info alert-dismissible" role="alert">
+                           <button type="button" class="close" data-dismiss="alert">×</button>
+                            <div class="alert-icon">
+                             <i class="icon-info"></i>
+                            </div>
+                            <div class="alert-message">
+                              <span><strong>Info!</strong> Lorem Ipsum is simply dummy text.</span>
+                            </div>
+                          </div>
+                            <table class="table table-hover table-striped">
+                                <tbody>                                    
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
+                                        </td>
+                                    </tr>
+                                </tbody> 
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="edit">
+                            <form  action="profile/edit"  method="POST" encType="multipart/form-data" >
+                                <div class="row g-3" class="mt-4">
+                                    <div class="col-md-4">
+                                        <label  class="form-label">First name</label>
+                                        <input type="text" class="form-control"  name="first_name" value="{{result.first_name}}">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label  class="form-label">Last name</label>
+                                        <input type="text" class="form-control"  name="last_name" value="{{result.last_name}}">
+                                    </div>
+                                     <div class="col-md-4">
+                                        <label class="form-label">Phone</label>
+                                        <input type="text" class="form-control" name="phone" value="{{result.phone}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-mb-3 mt-4">
+                                    <label class="form-label">Username</label>
+                                        <input type="text" class="form-control" name="user_name" value="{{result.user_name}}">
+                                </div>
+
+                                <div class="col-mb-3 mt-4">
+                                    <label class="form-label">Password</label>
+                                        <input type="password" class="form-control" name="password" value="{{result.password}}">
+                                </div>
+
+                                <div class="col-mb-3 mt-4">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" name="email" value="{{result.email}}">
+
+                                </div>
+
+                                <div class="col-mb-3 mt-4">
+                                    <label class="form-label">Address</label>
+                                        <input type="text" class="form-control" name="address" value="{{result.address}}">
+                                </div>
+                                
+                                
+                                <div>
+                                    <label class="form-label" style="margin-top: 10px;">Product Image</label>
+                                    <input type="file" class="form-control form-control-lg" id="formFileLg" name="sampleFile" />
+                                </div>
+                       
+                                <div class="col-lg-9 mt-4 d-flex justify-content-end" style="right:0px;">
+                                    <input type="submit" class="btn btn-primary" value="Save Changes" style="margin-right:20px;">
+                                    <input type="reset" class="btn btn-secondary" value="Cancel">
+                                </div>                             
+                            </form>
+                                
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div> 
+            </div>
+        </div>
+   {{> footer}}
+
+    </script>

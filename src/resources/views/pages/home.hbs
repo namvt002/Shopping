@@ -82,55 +82,141 @@
                 <div class="about-content">
                     <!-- single item -->
                     <div class="content active" id="history">
-                    <h4>history</h4>
-                    <p>
-                        I'm baby wolf pickled schlitz try-hard normcore marfa man bun
-                        mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
-                        rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
-                        tilde try-hard, woke fixie banjo man bun. Small batch tumeric
-                        mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
-                        direct trade hoodie ugh chambray, craft beer pork belly flannel
-                        tacos single-origin coffee art party migas plaid pop-up.
-                    </p>
+                        <h4>History</h4>
+                        <p>
+                            I'm baby wolf pickled schlitz try-hard normcore marfa man bun
+                            mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
+                            rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
+                            tilde try-hard, woke fixie banjo man bun. Small batch tumeric
+                            mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
+                            direct trade hoodie ugh chambray, craft beer pork belly flannel
+                            tacos single-origin coffee art party migas plaid pop-up.
+                            tacos single-origin coffee art party migas plaid pop-up.
+                            tacos single-origin coffee art party migas plaid pop-up.
+                        </p>
                     </div>
                     <!-- end of single item -->
                     <!-- single item -->
                     <div class="content" id="vision">
-                    <h4>vision</h4>
-                    <p>
-                        Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
-                        crucifix offal deep v hella biodiesel. Church-key listicle
-                        polaroid put a bird on it chillwave palo santo enamel pin,
-                        tattooed meggings franzen la croix cray. Retro yr aesthetic four
-                        loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
-                        Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
-                        Roof party hammock master cleanse pop-up truffaut, bicycle
-                        rights skateboard affogato readymade sustainable deep v
-                        live-edge schlitz narwhal.
-                    </p>
-                    
+                        <h4>Vision</h4>
+                        <p>
+                            Man bun PBR&B keytar copper mug prism, hell of helvetica. Synth
+                            crucifix offal deep v hella biodiesel. Church-key listicle
+                            polaroid put a bird on it chillwave palo santo enamel pin,
+                            tattooed meggings franzen la croix cray. Retro yr aesthetic four
+                            loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
+                            Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
+                            Roof party hammock master cleanse pop-up truffaut, bicycle
+                            rights skateboard affogato readymade sustainable deep v
+                            live-edge schlitz narwhal.
+                        </p>
                     </div>
                     <!-- end of single item -->
                     <!-- single item -->
                     <div class="content" id="goals">
-                    <h4>goals</h4>
-                    <p>
-                        Chambray authentic truffaut, kickstarter brunch taxidermy vape
-                        heirloom four dollar toast raclette shoreditch church-key.
-                        Poutine etsy tote bag, cred fingerstache leggings cornhole
-                        everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
-                        swag, mixtape hashtag marfa readymade direct trade man braid
-                        cold-pressed roof party. Small batch adaptogen coloring book
-                        heirloom. Letterpress food truck hammock literally hell of wolf
-                        beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
-                        banh mi salvia venmo photo booth quinoa chicharrones.
-                    </p>
+                        <h4>Goals</h4>
+                        <p>
+                            Chambray authentic truffaut, kickstarter brunch taxidermy vape
+                            heirloom four dollar toast raclette shoreditch church-key.
+                            Poutine etsy tote bag, cred fingerstache leggings cornhole
+                            everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
+                            swag, mixtape hashtag marfa readymade direct trade man braid
+                            cold-pressed roof party. Small batch adaptogen coloring book
+                            heirloom. Letterpress food truck hammock literally hell of wolf
+                            beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
+                            banh mi salvia venmo photo booth quinoa chicharrones.
+                        </p>
                     </div>
                     <!-- end of single item -->
                 </div>
                 </article>
             </div>
         </section>
+    </div>
+
+    <div class="container">
+
+        <div class="col text-center">
+            <h3>Product</h3>
+        </div>
+
+        <div class="mt-4">
+            <div class="row">
+                {{#each rows}}
+                    <div class="col-4 .col-sm-4" style="padding-left:65px;">
+                        <div class="card card-product-item" style="width: 18rem;">
+                            <img class="card-img-top" src="image/product_img/{{this.product_image}}" >
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.product_name}}</h5>
+                                <h6 class="card-title">Price:{{this.price}} $</h6>
+                                <p class="card-text">{{this.description}}</p>
+                                <a href="#" class="btn btn-primary">Add cart</a>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
+                        </div>                    
+                    </div>
+                {{/each}}
+            </div> 
+        </div>
+    </div>
+
+
+    {{!-- question --}}
+    <div class="container" style="margin-top:50px; margin-bottom: 100px;" >
+        <div class="col text-center">
+            <h3>General Questions</h3>
+        </div>
+        <div class="row justify-content-center" style="margin: 50px 250px;" >
+            
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Do You Accept All Major Credit Cards?
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>The non-refundable convenience fee for credit cards payments is 6%.</strong> 
+                        <p>We accept all major credit cards including Visa, MasterCard, American Express (AMEX), and Discover. We utilize Intuit and PayPal for credit card processing.
+                        Payment Terms: Full payment is due at the time of service rendered. In the event payment is declined, client will reimburse Treadmill Installers for any fees incurred. If payment is not forthcoming for an additional 10 days, Treadmill Installers may elect to seek redress in court, or may turn the matter over to a collection agency, at its sole discretion.</p>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What is the store's promotion?
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>In-store promotions</strong> 
+                        <p>
+                            In-store promotions are any marketing or sales promotion that is done in a brick and mortar business location. In-store promotions are a highly effective marketing tactic designed to bring customers to your brick and mortar store and build brand or product awareness.
+                            In-store promotions can be advertised through many different channels, but every distribution method will usually fall into one of two categories: Print and Online Advertising or Point Of Sale (POS) Advertising. Each type of advertising can be used to draw traffic and build brand awareness to your business. Using both methods together will help you capture a larger audience.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Percentage and dollar amount discounts ?
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Discounting products.</strong> 
+                        <p>
+                            Discounting products may be the most popular type of sales promotion. Everyone loves a bargain, so it makes sense to offer sales discounts when you want to garner attention.
+                            You can offer a percentage discount, such as “20% off,” or offer dollar amount deals, such as “$5 off.” Promotional pricing can extend storewide, or it can apply only to certain products. Storewide attracts the most buzz, but it’s important to do what works for you.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
     </div>
 
   
