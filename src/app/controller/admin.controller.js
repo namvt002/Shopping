@@ -126,13 +126,13 @@ exports.update = async (req, res) => {
     }
   }
 
-  exports.viewall = async (req, res) => {
-    try{
-        let id = req.params.id;
-        const rows = await product.viewall(id);
-        res.render('partials/admin/view-product', { rows: rows });
-    }catch(err){
-      console.log(err);
-    }
-  }
+  // exports.viewall = async (req, res) => {
+  //   try{
+  //       let id = req.params.id;
+  //       const rows = await product.viewall(id);
+  //       res.render('partials/admin/view-product', { rows: rows });
+  //   }catch(err){
+  //     console.log(err);
+  //   }
+  // }
 

@@ -49,6 +49,14 @@ p{
     padding-right: 25px;
 }
 
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+
 .row{
     display: flex;
     align-items: center;
@@ -101,18 +109,11 @@ p{
 }
 
 
-.small-container{
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-}
 
 .menu-icon{
     width:28px;
     margin-left: 20px;
     display: none;
-    
 }
 
 .logo-account{
@@ -203,7 +204,6 @@ input:focus{
     align-items: center;
     width: 25px;
     height: 25px;
-
 }
 
 .color[color="blue"]{
@@ -269,7 +269,6 @@ input:focus{
 }
 
 #size-radio{
-    
     position:absolute;
     width: 30px;
     height: 30px;

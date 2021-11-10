@@ -31,28 +31,28 @@ var SmallImg = document.getElementsByClassName("small-img");
 // đổi màu cho cái chi tiêt sản phẩm
 
 
-const sizes = document.querySelectorAll('.size');
-const colors = document.querySelectorAll('.color');
-let prevColor = "blue";
-let animationEnd = true;
-function changeSize(){
-    sizes.forEach(size => size.classList.remove('active'));
-    this.classList.add('active');
-}
-function changeColor(){
-    if(!animationEnd) return;
-    let primary = this.getAttribute('primary');
-    let color = this.getAttribute('color');
-    //if(color == prevColor) return;
+// const sizes = document.querySelectorAll('.size');
+// const colors = document.querySelectorAll('.color');
+// let prevColor = "blue";
+// let animationEnd = true;
+// function changeSize(){
+//     sizes.forEach(size => size.classList.remove('active'));
+//     this.classList.add('active');
+// }
+// function changeColor(){
+//     if(!animationEnd) return;
+//     let primary = this.getAttribute('primary');
+//     let color = this.getAttribute('color');
+//     //if(color == prevColor) return;
    
-    colors.forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
+//     colors.forEach(c => c.classList.remove('active'));
+//     this.classList.add('active');
 
-    document.documentElement.style.setProperty('--primary', primary);
+//     document.documentElement.style.setProperty('--primary', primary);
 
-}
-sizes.forEach(size => size.addEventListener('click', changeSize));
-colors.forEach(c => c.addEventListener('click', changeColor));
+// }
+// sizes.forEach(size => size.addEventListener('click', changeSize));
+// colors.forEach(c => c.addEventListener('click', changeColor));
 
 
 // --sidershows -----

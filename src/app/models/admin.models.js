@@ -75,14 +75,14 @@ module.exports.delete = (iddelete) => {
     })
 }
 
-module.exports.viewall = (idview)=>{
-    return new Promise((resolve, reject)=>{
-        connection.query('SELECT * FROM products WHERE id = ?', idview , (error, result)=>{
-            if(error){
-                reject(error);
-            }else{
-                resolve(result);
-            }
-        })
-    })
-}
+// module.exports.viewall = (idview)=>{
+//     return new Promise((resolve, reject)=>{
+//         connection.query('SELECT * FROM products WHERE id = ?', idview , (error, result)=>{
+//             if(error){
+//                 reject(error);
+//             }else{
+//                 resolve(result);
+//             }
+//         })
+//     })
+// }
